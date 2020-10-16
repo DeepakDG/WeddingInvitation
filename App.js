@@ -5,13 +5,37 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity,
-  TouchableHighlight,
   Alert,
   ImageBackground,
 } from "react-native";
 import PropTypes from "prop-types";
-
+import { FloatingAction } from "react-native-floating-action";
+const actions = [
+  {
+    text: "Accessibility",
+    icon: require("./images/location.png"),
+    name: "bt_accessibility",
+    position: 2,
+  },
+  {
+    text: "Language",
+    icon: require("./images/location.png"),
+    name: "bt_language",
+    position: 1,
+  },
+  {
+    text: "Location",
+    icon: require("./images/location.png"),
+    name: "bt_room",
+    position: 3,
+  },
+  {
+    text: "Video",
+    icon: require("./images/location.png"),
+    name: "bt_videocam",
+    position: 4,
+  },
+];
 class TypingText extends Component<{}> {
   constructor() {
     super();
@@ -149,12 +173,12 @@ export default class Myapp extends Component<{}> {
 
           {this.state.isVisible === true ? Splash_Screen : null}
         </ImageBackground>
-        <TouchableHighlight style={styles.locationstyle} activeOpacity={0.5}>
-          <Image
-            source={require("./images/location.png")}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableHighlight>
+        <FloatingAction
+          actions={actions}
+          onPressItem={(name) => {
+            console.log(`selected button: ${name}`);
+          }}
+        />
       </View>
     );
   }
@@ -185,22 +209,6 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-  },
-  locationstyle: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor:"#f0f0f0",
-    position: "absolute",
-    bottom: 20,
-    right: 20,
-  },
-  buttonImageIconStyle: {
-    padding: 15,
-    margin: 15,
-    height: 30,
-    width: 20,
-    resizeMode: "stretch",
   },
 });
 
