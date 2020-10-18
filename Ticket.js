@@ -6,9 +6,10 @@ import {
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
-  View
+  View,
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import Triangle from "react-native-triangle";
 
 const { height } = Dimensions.get("window");
 
@@ -16,11 +17,11 @@ const fontColour = "#07080A";
 
 const styles = StyleSheet.create({
   flex: {
-    flex: 1
+    flex: 1,
   },
   container: {
     height: 400,
-    alignSelf: "stretch"
+    alignSelf: "stretch",
   },
   ticketTopContainer: {
     flex: 1,
@@ -28,13 +29,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     alignItems: "flex-start",
     borderColor: "#EEEEEE",
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   ticketBottomContainer: {
-    flex: 2
+    flex: 2,
   },
   queueSummaryContainer: {
     flex: 1,
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     paddingRight: 24,
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   acceptTicketContainer: {
     flex: 1,
@@ -51,58 +52,58 @@ const styles = StyleSheet.create({
     backgroundColor: "#9AD275",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
   },
   heading: {
     fontSize: 28,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   subHeading: {
     fontSize: 16,
-    fontWeight: "100"
+    fontWeight: "100",
   },
   ticketSummary: {
     // Used to offset the big ticketNumber size
-    paddingTop: 16
+    paddingTop: 16,
   },
   ticketNumber: {
     fontSize: 70,
-    textAlign: "right"
+    textAlign: "right",
   },
   queueHeader: {
-    paddingBottom: 4
+    paddingBottom: 4,
   },
   queueValue: {
     fontSize: 28,
     fontWeight: "bold",
-    color: "#333333"
+    color: "#333333",
   },
   greyText: {
-    color: "#07080A"
+    color: "#07080A",
   },
   lightGreyText: {
-    color: "#AAAAAA"
+    color: "#AAAAAA",
   },
   whiteText: {
-    color: "#FFFFFF"
+    color: "#FFFFFF",
   },
   notchContainer: {
     position: "absolute",
     width: "100%",
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   notch: {
     height: 80,
     width: 80,
-    borderRadius: 80
+    borderRadius: 80,
   },
   ticketNotchContainer: {
-    bottom: -60
+    bottom: -60,
   },
   ticketNotch: {
-    backgroundColor: "#00B9F1"
-  }
+    backgroundColor: "#00B9F1",
+  },
 });
 
 class Ticket extends React.Component {
@@ -122,25 +123,25 @@ class Ticket extends React.Component {
             Animated.timing(this.ticketAcceptedAnimation, {
               toValue: 1,
               duration: 500,
-              useNativeDriver: true
+              useNativeDriver: true,
             }).start(() => {
               Animated.timing(this.ticketHidingAnimation, {
                 toValue: 1,
                 duration: 1000,
                 delay: 4500,
-                useNativeDriver: true
+                useNativeDriver: true,
               }).start(() => {
                 this.props.onTicketTaken();
               });
             });
           });
         }
-      }
+      },
     });
 
     this.state = {
       ticketTaken: false,
-      ticketTimeRemaining: 0
+      ticketTimeRemaining: 0,
     };
   }
 
@@ -150,7 +151,7 @@ class Ticket extends React.Component {
 
       this.setState({
         ticketTimeRemaining: remainingTime,
-        ticketTaken: remainingTime > 0
+        ticketTaken: remainingTime > 0,
       });
 
       if (remainingTime > 0) {
@@ -166,7 +167,7 @@ class Ticket extends React.Component {
       ticketDate,
       ticketTime,
       estimatedWaitTime,
-      queuePosition
+      queuePosition,
     } = this.props;
 
     const ticketStyles = {
@@ -174,20 +175,20 @@ class Ticket extends React.Component {
         {
           translateY: this.ticketAcceptedAnimation.interpolate({
             inputRange: [0, 1],
-            outputRange: [0, 100]
-          })
+            outputRange: [0, 100],
+          }),
         },
         {
           scale: this.ticketHidingAnimation.interpolate({
             inputRange: [0, 1],
-            outputRange: [1, 0]
-          })
-        }
+            outputRange: [1, 0],
+          }),
+        },
       ],
       opacity: this.ticketHidingAnimation.interpolate({
         inputRange: [0, 1],
-        outputRange: [1, 0]
-      })
+        outputRange: [1, 0],
+      }),
     };
 
     return (
@@ -196,22 +197,22 @@ class Ticket extends React.Component {
           <Animated.View style={[styles.ticketTopContainer]}>
             <View style={[styles.flex, styles.ticketSummary]}>
               <Text style={[styles.heading, styles.greyText]}>
-                Ticket N&deg;
+                Welcome to Wedding Ceremony
               </Text>
-              <Text style={[styles.subHeading, styles.lightGreyText]}>
+              {/* <Text style={[styles.subHeading, styles.lightGreyText]}>
                 {ticketDate}
               </Text>
               <Text style={[styles.subHeading, styles.lightGreyText]}>
                 {ticketTime}
-              </Text>
+              </Text> */}
             </View>
-            <View style={styles.flex}>
+            {/* <View style={styles.flex}>
               <Text
                 style={[styles.heading, styles.ticketNumber, styles.greyText]}
               >
                 {ticketNumber}
               </Text>
-            </View>
+            </View> */}
           </Animated.View>
 
           <View style={styles.ticketBottomContainer}>
@@ -221,15 +222,15 @@ class Ticket extends React.Component {
                   style={[
                     styles.subHeading,
                     styles.greyText,
-                    styles.queueHeader
+                    styles.queueHeader,
                   ]}
                 >
-                  Queue position
+                  Engagement
                 </Text>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <View style={{ paddingRight: 8 }}>
+                  {/* <View style={{ paddingRight: 8 }}>
                     <Icon name="md-people" color="#000000" size={32} />
-                  </View>
+                  </View> */}
                   <View>
                     <Text style={styles.queueValue}>{queuePosition}</Text>
                   </View>
@@ -240,20 +241,20 @@ class Ticket extends React.Component {
                   style={[
                     styles.subHeading,
                     styles.greyText,
-                    styles.queueHeader
+                    styles.queueHeader,
                   ]}
                 >
-                  Estimated time
+                  Marriage
                 </Text>
 
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <View style={{ paddingRight: 8 }}>
+                  {/* <View style={{ paddingRight: 8 }}>
                     <Icon name="md-timer" color="#000000" size={32} />
-                  </View>
+                  </View> */}
                   <View>
                     <Text style={styles.queueValue}>
-                      {estimatedWaitTime}{" "}
-                      <Text style={{ fontSize: 18 }}>min</Text>
+                      {estimatedWaitTime}
+                      {/* <Text style={{ fontSize: 18 }}>min</Text> */}
                     </Text>
                   </View>
                 </View>
@@ -280,7 +281,7 @@ class Ticket extends React.Component {
                     borderWidth: 2,
                     borderColor: "#FFFFFF",
                     justifyContent: "center",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
                   {ticketTimeRemaining ? (
@@ -299,8 +300,13 @@ class Ticket extends React.Component {
             </View>
           </View>
 
-          <View style={[styles.notchContainer, styles.ticketNotchContainer]}>
-            <View style={[styles.notch, styles.ticketNotch]} />
+          <View>
+            <Triangle
+              width={310}
+              height={100}
+              color={"#D80016"}
+              direction={"down"}
+            />
           </View>
         </Animated.View>
       </View>

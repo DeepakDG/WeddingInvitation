@@ -113,7 +113,7 @@ class TypingText extends Component<{}> {
             color: this.props.color,
             fontSize: this.props.textSize,
             textAlign: "center",
-            margin: this.props.margin,
+            marginTop: this.props.marginTop,
             fontFamily: this.props.fontFamily,
           }}
         >
@@ -157,11 +157,11 @@ export default class Myapp extends Component<{}> {
           <Printer key={this.state.ticketIndex} ticketHeight={ticketHeight}>
             <Ticket
               height={ticketHeight}
-              ticketNumber={25}
-              ticketDate="30/03/18"
-              ticketTime="01:07"
-              estimatedWaitTime="12"
-              queuePosition="2"
+              // ticketNumber={25}
+              // ticketDate="Welcome to Wedding Ceremony"
+              // ticketTime="01:07"
+              estimatedWaitTime="11th Dec"
+              queuePosition="10th Dec"
               onTicketTaken={() => {
                 this.setState({ ticketIndex: this.state.ticketIndex + 1 });
               }}
@@ -179,12 +179,11 @@ export default class Myapp extends Component<{}> {
           <Text
             style={{
               textAlign: "center",
-              marginTop: 120,
+              marginTop: 40,
               fontSize: 20,
               color: "#ff0000",
               alignContent: "center",
-            }}
-          >
+            }}>
             ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
           </Text>
           <TypingText text="With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha and Deepak, the 11th of Dec at 8:15 AM in the Morning At KH PATIL Marriage Hall APMC-YARD Gadag, Reception to follow" />
@@ -233,7 +232,7 @@ const styles = StyleSheet.create({
 TypingText.propTypes = {
   text: PropTypes.string,
   color: PropTypes.string,
-  margin: PropTypes.number,
+  marginTop: PropTypes.number,
   textSize: PropTypes.number,
   fontFamily: PropTypes.fontFamily,
   typingAnimationDuration: PropTypes.number,
@@ -243,7 +242,7 @@ TypingText.propTypes = {
 TypingText.defaultProps = {
   text: "Default Typing Animated Text.",
   color: "rgb(255,223,0)",
-  margin: 40,
+  marginTop: 100,
   textSize: 30,
   fontFamily: "Courgette.Regular",
   typingAnimationDuration: 50,
