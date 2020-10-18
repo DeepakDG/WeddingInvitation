@@ -10,6 +10,9 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import { FloatingAction } from "react-native-floating-action";
+import Printer from "./Printer";
+import Ticket from "./Ticket";
+
 const actions = [
   {
     text: "Family-info",
@@ -126,6 +129,7 @@ export default class Myapp extends Component<{}> {
     super();
     this.state = {
       isVisible: true,
+      ticketIndex: 1,
     };
   }
   Hide_Splash_Screen = () => {
@@ -142,13 +146,27 @@ export default class Myapp extends Component<{}> {
   }
 
   render() {
+    const ticketHeight = 400;
     let Splash_Screen = (
       <View style={styles.SplashScreen_RootView}>
         <View style={styles.SplashScreen_ChildView}>
-          <Image
+          {/* <Image
             source={require("./images/veerabhadra10.jpg")}
             style={{ width: "100%", height: "100%", resizeMode: "contain" }}
-          />
+          /> */}
+          <Printer key={this.state.ticketIndex} ticketHeight={ticketHeight}>
+            <Ticket
+              height={ticketHeight}
+              ticketNumber={25}
+              ticketDate="30/03/18"
+              ticketTime="01:07"
+              estimatedWaitTime="12"
+              queuePosition="2"
+              onTicketTaken={() => {
+                this.setState({ ticketIndex: this.state.ticketIndex + 1 });
+              }}
+            />
+          </Printer>
         </View>
       </View>
     );
