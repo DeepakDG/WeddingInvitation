@@ -12,29 +12,29 @@ import PropTypes from "prop-types";
 import { FloatingAction } from "react-native-floating-action";
 const actions = [
   {
-    text: "Accessibility",
-    icon: require("./images/location.png"),
-    name: "bt_accessibility",
-    position: 2,
-  },
-  {
-    text: "Language",
-    icon: require("./images/location.png"),
-    name: "bt_language",
+    text: "Family-info",
+    icon: require("./images/info_icon.png"),
+    name: "btn_familyInfo",
     position: 1,
   },
   {
-    text: "Location",
-    icon: require("./images/location.png"),
-    name: "bt_room",
-    position: 3,
+    text: "Language",
+    icon: require("./images/language_icon.png"),
+    name: "btn_language",
+    position: 2,
   },
   {
-    text: "Video",
-    icon: require("./images/location.png"),
-    name: "bt_videocam",
-    position: 4,
+    text: "Location",
+    icon: require("./images/location_icon.png"),
+    name: "btn_location",
+    position: 3,
   },
+  // {
+  //   text: "Video",
+  //   icon: require("./images/location.png"),
+  //   name: "bt_videocam",
+  //   position: 4,
+  // },
 ];
 class TypingText extends Component<{}> {
   constructor() {
@@ -155,13 +155,13 @@ export default class Myapp extends Component<{}> {
     return (
       <View style={styles.MainContainer}>
         <ImageBackground
-          source={require("./images/backgroundwal.jpg")}
+          source={require("./images/bg.jpg")}
           style={{ width: "100%", height: "100%" }}
         >
           <Text
             style={{
               textAlign: "center",
-              marginTop: 150,
+              marginTop: 120,
               fontSize: 20,
               color: "#ff0000",
               alignContent: "center",
