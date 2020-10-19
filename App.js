@@ -114,7 +114,7 @@ class TypingText extends Component<{}> {
             fontSize: this.props.textSize,
             textAlign: "center",
             marginTop: this.props.marginTop,
-            marginHorizontal:this.props.marginHorizontal,
+            marginHorizontal: this.props.marginHorizontal,
             fontFamily: this.props.fontFamily,
           }}
         >
@@ -143,7 +143,7 @@ export default class Myapp extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 500000);
+    }, 5000);
   }
 
   render() {
@@ -184,7 +184,8 @@ export default class Myapp extends Component<{}> {
               fontSize: 20,
               color: "#ff0000",
               alignContent: "center",
-            }}>
+            }}
+          >
             ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
           </Text>
           <TypingText text="With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha and Deepak, the 11th of Dec at 8:15 AM in the Morning At KH PATIL Marriage Hall APMC-YARD Gadag, Reception to follow" />
@@ -234,7 +235,7 @@ TypingText.propTypes = {
   text: PropTypes.string,
   color: PropTypes.string,
   marginTop: PropTypes.number,
-  marginHorizontal:PropTypes.number,
+  marginHorizontal: PropTypes.number,
   textSize: PropTypes.number,
   fontFamily: PropTypes.fontFamily,
   typingAnimationDuration: PropTypes.number,
@@ -245,7 +246,7 @@ TypingText.defaultProps = {
   text: "Default Typing Animated Text.",
   color: "rgb(255,223,0)",
   marginTop: 100,
-  marginHorizontal:30,
+  marginHorizontal: 30,
   textSize: 30,
   fontFamily: "Courgette.Regular",
   typingAnimationDuration: 50,

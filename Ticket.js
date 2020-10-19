@@ -116,15 +116,6 @@ class Ticket extends React.Component {
               toValue: 1,
               duration: 500,
               useNativeDriver: true,
-            }).start(() => {
-              Animated.timing(this.ticketHidingAnimation, {
-                toValue: 1,
-                duration: 1000,
-                delay: 4500,
-                useNativeDriver: true,
-              }).start(() => {
-                this.props.onTicketTaken();
-              });
             });
           });
         }
@@ -288,7 +279,7 @@ class Ticket extends React.Component {
           <Triangle
               width={310}
               height={100}
-              color={"#D80016"}
+              color={"#bb1471"}
               direction={"down"}
             />
           </View>
