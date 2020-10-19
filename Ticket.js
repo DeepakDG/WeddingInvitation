@@ -13,7 +13,7 @@ import Triangle from "react-native-triangle";
 
 const { height } = Dimensions.get("window");
 
-const fontColour = "#07080A";
+const fontColour = "rgb(255,223,0)";
 
 const styles = StyleSheet.create({
   flex: {
@@ -25,12 +25,10 @@ const styles = StyleSheet.create({
   },
   ticketTopContainer: {
     flex: 1,
-    paddingTop: 16,
-    paddingHorizontal: 16,
-    backgroundColor: "#FFFFFF",
-    flexDirection: "row",
-    // justifyContent: "space-between",
-    alignItems: "flex-start",
+    paddingTop: 10,
+    backgroundColor: "#bb1471",
+    alignItems: "center",
+    justifyContent: "center",
     borderColor: "#EEEEEE",
     borderBottomWidth: 1,
   },
@@ -39,59 +37,47 @@ const styles = StyleSheet.create({
   },
   queueSummaryContainer: {
     flex: 1,
-    paddingTop: 32,
-    paddingLeft: 16,
-    paddingRight: 24,
-    backgroundColor: "#FFFFFF",
+    paddingTop: 12,
+    backgroundColor: "#bb1471",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    alignItems: "center",
   },
   acceptTicketContainer: {
     flex: 1,
-    paddingHorizontal: 16,
-    backgroundColor: "#9AD275",
-    flexDirection: "row",
+    paddingTop: 10,
+    backgroundColor: "#bb1471",
     justifyContent: "space-between",
     alignItems: "center",
   },
   heading: {
-    fontSize: 28,
     fontWeight: "bold",
   },
   subHeading: {
-    fontSize: 16,
-    fontWeight: "100",
+    fontWeight: "bold",
   },
   ticketSummary: {
-    // Used to offset the big ticketNumber size
     paddingTop: 16,
+    justifyContent: "center",
   },
   ticketNumber: {
-    fontSize: 70,
     textAlign: "right",
   },
   queueHeader: {
     paddingBottom: 4,
   },
   queueValue: {
-    fontSize: 28,
     fontWeight: "bold",
-    color: "#333333",
+    color: "rgb(255,223,0)",
   },
   greyText: {
-    color: "#07080A",
+    color: "rgb(255,223,0)",
   },
   lightGreyText: {
-    color: "#AAAAAA",
+    color: "rgb(255,223,0)",
   },
   whiteText: {
-    color: "#FFFFFF",
-  },
-  notchContainer: {
-    position: "absolute",
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "center",
+    color: "rgb(255,223,0)",
   },
   notch: {
     height: 80,
@@ -102,7 +88,13 @@ const styles = StyleSheet.create({
     bottom: -60,
   },
   ticketNotch: {
-    backgroundColor: "#00B9F1",
+    backgroundColor: "#bb1471",
+  },
+  fontFamilyAll: {
+    fontFamily: "Courgette.Regular",
+    color: "rgb(255,223,0)",
+    fontSize: 28,
+    justifyContent: "center",
   },
 });
 
@@ -196,9 +188,7 @@ class Ticket extends React.Component {
         <Animated.View style={[styles.container, ticketStyles]}>
           <Animated.View style={[styles.ticketTopContainer]}>
             <View style={[styles.flex, styles.ticketSummary]}>
-              <Text style={[styles.heading, styles.greyText]}>
-                Welcome to Wedding Ceremony
-              </Text>
+              <Text style={styles.fontFamilyAll}>Our Wedding Day</Text>
               {/* <Text style={[styles.subHeading, styles.lightGreyText]}>
                 {ticketDate}
               </Text>
@@ -218,41 +208,27 @@ class Ticket extends React.Component {
           <View style={styles.ticketBottomContainer}>
             <View style={styles.queueSummaryContainer}>
               <View>
-                <Text
-                  style={[
-                    styles.subHeading,
-                    styles.greyText,
-                    styles.queueHeader,
-                  ]}
-                >
-                  Engagement
-                </Text>
+                <Text style={[styles.fontFamilyAll]}>Engagement</Text>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   {/* <View style={{ paddingRight: 8 }}>
                     <Icon name="md-people" color="#000000" size={32} />
                   </View> */}
                   <View>
-                    <Text style={styles.queueValue}>{queuePosition}</Text>
+                    <Text style={(styles.queueValue, styles.fontFamilyAll)}>
+                      {queuePosition}
+                    </Text>
                   </View>
                 </View>
               </View>
               <View>
-                <Text
-                  style={[
-                    styles.subHeading,
-                    styles.greyText,
-                    styles.queueHeader,
-                  ]}
-                >
-                  Marriage
-                </Text>
+                <Text style={[styles.fontFamilyAll]}>Marriage</Text>
 
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   {/* <View style={{ paddingRight: 8 }}>
                     <Icon name="md-timer" color="#000000" size={32} />
                   </View> */}
                   <View>
-                    <Text style={styles.queueValue}>
+                    <Text style={(styles.queueValue, styles.fontFamilyAll)}>
                       {estimatedWaitTime}
                       {/* <Text style={{ fontSize: 18 }}>min</Text> */}
                     </Text>
@@ -265,15 +241,23 @@ class Ticket extends React.Component {
               style={styles.acceptTicketContainer}
             >
               <View>
-                <Text style={[styles.heading, styles.whiteText]}>
-                  Take the ticket
+                <Text
+                  style={
+                    (styles.heading, styles.whiteText, styles.fontFamilyAll)
+                  }
+                >
+                  Heartily
                 </Text>
-                <Text style={[styles.subHeading, styles.whiteText]}>
-                  Tap to accept
+                <Text
+                  style={
+                    (styles.subHeading, styles.whiteText, styles.fontFamilyAll)
+                  }
+                >
+                  Welcome
                 </Text>
               </View>
-              <View style={{ paddingRight: 24 }}>
-                <View
+              {/* <View style={{ paddingRight: 24 }}> */}
+              {/* <View
                   style={{
                     height: 48,
                     width: 48,
@@ -283,25 +267,25 @@ class Ticket extends React.Component {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                >
-                  {ticketTimeRemaining ? (
+                > */}
+              {/* {ticketTimeRemaining ? (
                     <Text style={[styles.heading, styles.whiteText]}>
                       {ticketTimeRemaining}
                     </Text>
                   ) : (
                     <Icon
-                      name="md-arrow-round-down"
-                      color="#FFFFFF"
+                      name=""
+                      color="rgb(255,223,0)"
                       size={32}
                     />
-                  )}
-                </View>
-              </View>
+                  )} */}
+              {/* </View> */}
+              {/* </View> */}
             </View>
           </View>
 
-          <View>
-            <Triangle
+          <View style={[styles.triangle, this.props.style]}>
+          <Triangle
               width={310}
               height={100}
               color={"#D80016"}

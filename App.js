@@ -114,6 +114,7 @@ class TypingText extends Component<{}> {
             fontSize: this.props.textSize,
             textAlign: "center",
             marginTop: this.props.marginTop,
+            marginHorizontal:this.props.marginHorizontal,
             fontFamily: this.props.fontFamily,
           }}
         >
@@ -142,7 +143,7 @@ export default class Myapp extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 5000);
+    }, 500000);
   }
 
   render() {
@@ -221,7 +222,7 @@ const styles = StyleSheet.create({
   SplashScreen_ChildView: {
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#00BCD4",
+    backgroundColor: "#F8C0B5",
     flex: 1,
   },
   image: {
@@ -233,6 +234,7 @@ TypingText.propTypes = {
   text: PropTypes.string,
   color: PropTypes.string,
   marginTop: PropTypes.number,
+  marginHorizontal:PropTypes.number,
   textSize: PropTypes.number,
   fontFamily: PropTypes.fontFamily,
   typingAnimationDuration: PropTypes.number,
@@ -243,6 +245,7 @@ TypingText.defaultProps = {
   text: "Default Typing Animated Text.",
   color: "rgb(255,223,0)",
   marginTop: 100,
+  marginHorizontal:30,
   textSize: 30,
   fontFamily: "Courgette.Regular",
   typingAnimationDuration: 50,
