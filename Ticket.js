@@ -179,17 +179,13 @@ class Ticket extends React.Component {
         <Animated.View style={[styles.container, ticketStyles]}>
           <Animated.View style={[styles.ticketTopContainer]}>
             <View style={[styles.flex, styles.ticketSummary]}>
-              <Text
-                style={{
-                  textAlign: "center",
-                  marginTop: 10,
-                  fontSize: 20,
-                  color: "#ffffff",
-                  alignContent: "center",
-                }}
-              >
-                {"||ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ||"}
-              </Text>
+            <Text style={{
+              textAlign: "center",
+              fontSize: 20,
+              color: "#ffffff",
+              alignContent: "center",
+              paddingBottom:10,
+            }}>{"||ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ||"}</Text>
               <Text style={styles.fontFamilyAll}>{"Our Wedding Day"}</Text>
               {/* <Text style={[styles.subHeading, styles.lightGreyText]}>
                 {ticketDate}
@@ -287,7 +283,7 @@ class Ticket extends React.Component {
           </View>
 
           <View style={[styles.triangle, this.props.style]}>
-            <Triangle
+          <Triangle
               width={310}
               height={100}
               color={"#bb1471"}
