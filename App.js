@@ -184,13 +184,14 @@ export default class Myapp extends Component<{}> {
               textAlign: "center",
               marginTop: 40,
               fontSize: 20,
-              color: "#ff0000",
+              color: "#ffffff",
               alignContent: "center",
+              fontFamily: "BalooTamma2-Regular",
             }}
           >
             ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
           </Text>
-          <TypingText text={"With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.ChamarSwamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya\n\nVENUE : \nKH PATIL Marriage Hall APMC-YARD Gadag"}/>
+          <TypingText text={"With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya\n\nVENUE : \nKH PATIL Marriage Hall APMC-YARD Gadag"}/>
           {this.state.isVisible === true ? Splash_Screen : null}
         </ImageBackground>
         <FloatingAction

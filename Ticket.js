@@ -185,6 +185,7 @@ class Ticket extends React.Component {
               color: "#ffffff",
               alignContent: "center",
               paddingBottom:10,
+              fontFamily: "BalooTamma2-Regular",
             }}>{"||ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ||"}</Text>
               <Text style={styles.fontFamilyAll}>{"Our Wedding Day"}</Text>
               {/* <Text style={[styles.subHeading, styles.lightGreyText]}>
