@@ -138,7 +138,7 @@ export default class Myapp extends Component<{}> {
       ticketIndex: 1,
       startValue: new Animated.Value(0),
       endValue: 1,
-      duration: 5000,
+      duration: 10000,
     };
   }
   Hide_Splash_Screen = () => {
@@ -151,7 +151,7 @@ export default class Myapp extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 500000);
+    }, 10000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -211,8 +211,7 @@ export default class Myapp extends Component<{}> {
                 flex: 1,
                 width: "50%",
                 height: "80%",
-                alignItems:"flex-end"
-              
+                alignItems:"flex-end",
               }}
             >
               <Animated.View style={[{ opacity: this.state.startValue }]}>
@@ -308,6 +307,6 @@ TypingText.defaultProps = {
   marginHorizontal: 30,
   textSize: 30,
   fontFamily: "Courgette.Regular",
-  typingAnimationDuration: 50,
+  typingAnimationDuration: 150,
   blinkingCursorAnimationDuration: 250,
 };

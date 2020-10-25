@@ -19,6 +19,7 @@
 		1EFEC8E28E434B2BA44FC667 /* MinnadropRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34D85B6B7BD4453FA2ED14B9 /* MinnadropRegular.ttf */; };
 		F24E8A67FC094CF1ABA4E4A5 /* birdsffparadise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13C272597C8141AB85CD0EE3 /* birdsffparadise.ttf */; };
 		6A9344781E4642E48F59DF85 /* Courgette.Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC996A9D92A84BBCA3FDA608 /* Courgette.Regular.ttf */; };
+		80C4B02DA0D74DB0B0798959 /* BalooTamma2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2FA6950C554E99B0EB9103 /* BalooTamma2-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		34D85B6B7BD4453FA2ED14B9 /* MinnadropRegular.ttf */ = {isa = PBXFileReference; name = "MinnadropRegular.ttf"; path = "../assets/fonts/MinnadropRegular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		13C272597C8141AB85CD0EE3 /* birdsffparadise.ttf */ = {isa = PBXFileReference; name = "birdsffparadise.ttf"; path = "../assets/fonts/birdsffparadise.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AC996A9D92A84BBCA3FDA608 /* Courgette.Regular.ttf */ = {isa = PBXFileReference; name = "Courgette.Regular.ttf"; path = "../assets/fonts/Courgette.Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2C2FA6950C554E99B0EB9103 /* BalooTamma2-Regular.ttf */ = {isa = PBXFileReference; name = "BalooTamma2-Regular.ttf"; path = "../assets/fonts/BalooTamma2-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				34D85B6B7BD4453FA2ED14B9 /* MinnadropRegular.ttf */,
 				13C272597C8141AB85CD0EE3 /* birdsffparadise.ttf */,
 				AC996A9D92A84BBCA3FDA608 /* Courgette.Regular.ttf */,
+				2C2FA6950C554E99B0EB9103 /* BalooTamma2-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				1EFEC8E28E434B2BA44FC667 /* MinnadropRegular.ttf in Resources */,
 				F24E8A67FC094CF1ABA4E4A5 /* birdsffparadise.ttf in Resources */,
 				6A9344781E4642E48F59DF85 /* Courgette.Regular.ttf in Resources */,
+				80C4B02DA0D74DB0B0798959 /* BalooTamma2-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
