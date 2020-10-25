@@ -7,11 +7,14 @@ import {
   Image,
   Alert,
   ImageBackground,
+  Animated,
+  Button,
 } from "react-native";
 import PropTypes from "prop-types";
 import { FloatingAction } from "react-native-floating-action";
 import Printer from "./Printer";
 import Ticket from "./Ticket";
+
 const actions = [
   {
     text: "Family-info",
@@ -119,6 +122,7 @@ class TypingText extends Component<{}> {
           }}
         >
           {this.state.text}
+
           <Text style={{ color: this.state.blinking_cursor_color }}>|</Text>
         </Text>
       </View>
@@ -132,6 +136,9 @@ export default class Myapp extends Component<{}> {
     this.state = {
       isVisible: true,
       ticketIndex: 1,
+      startValue: new Animated.Value(0),
+      endValue: 1,
+      duration: 5000,
     };
   }
   Hide_Splash_Screen = () => {
@@ -144,7 +151,13 @@ export default class Myapp extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 5000);
+    }, 500000);
+
+    Animated.timing(this.state.startValue, {
+      toValue: this.state.endValue,
+      duration: this.state.duration,
+      useNativeDriver: true,
+    }).start();
   }
 
   render() {
@@ -169,11 +182,51 @@ export default class Myapp extends Component<{}> {
               }}
             />
           </Printer>
+          <View
+            style={{
+              width: "100%",
+              flex: 1,
+              flexDirection: "row",
+              position: "absolute",
+              bottom: 0,
+            }}
+          >
+            <View
+              style={{
+                flex: 1,
+                width: "50%",
+                height: "80%",
+                alignItems: "flex-start",
+              }}
+            >
+              <Animated.View style={[{ opacity: this.state.startValue }]}>
+                <Image
+                  style={styles.tinyLogo}
+                  source={require("./images/groom.png")}
+                />
+              </Animated.View>
+            </View>
+            <View
+              style={{
+                flex: 1,
+                width: "50%",
+                height: "80%",
+                alignItems:"flex-end"
+              
+              }}
+            >
+              <Animated.View style={[{ opacity: this.state.startValue }]}>
+                <Image
+                  style={styles.tinyLogo}
+                  source={require("./images/bride.png")}
+                />
+              </Animated.View>
+            </View>
+          </View>
         </View>
       </View>
     );
     return (
-      
       <View style={styles.MainContainer}>
         <ImageBackground
           source={require("./images/bg.jpg")}
@@ -191,7 +244,11 @@ export default class Myapp extends Component<{}> {
           >
             ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
           </Text>
-          <TypingText text={"With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya\n\nVENUE : \nKH PATIL Marriage Hall APMC-YARD Gadag"}/>
+          <TypingText
+            text={
+              "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya\n\nVENUE : \nKH PATIL Marriage Hall APMC-YARD Gadag"
+            }
+          />
           {this.state.isVisible === true ? Splash_Screen : null}
         </ImageBackground>
         <FloatingAction
