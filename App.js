@@ -29,7 +29,7 @@ const actions = [
     position: 2,
   },
   {
-    text: "Location",
+    text: "Venue",
     icon: require("./images/location_icon.png"),
     name: "btn_location",
     position: 3,
