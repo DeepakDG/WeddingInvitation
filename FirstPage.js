@@ -159,10 +159,11 @@ export default class FirstPage extends Component<{}> {
       useNativeDriver: true,
     }).start();
   }
-  // static navigationOptions = {
-  //   // title: 'Second Page',
-  //   //Sets Header text of Status Bar
-  // };
+  static navigationOptions = {
+    header: null
+    // title: 'Second Page',
+    //Sets Header text of Status Bar
+  };
 
   render() {
     const ticketHeight = 400;
@@ -314,5 +315,5 @@ TypingText.defaultProps = {
   textSize: 30,
   fontFamily: "Courgette.Regular",
   typingAnimationDuration: 150,
-  blinkingCursorAnimationDuration: 250,
+  blinkingCursorAnimationDuration: 450,
 };
