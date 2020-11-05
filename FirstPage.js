@@ -259,7 +259,11 @@ export default class FirstPage extends Component<{}> {
         <FloatingAction
           actions={actions}
           onPressItem={(name) => {
+            if(name === "btn_location"){
             navigate('SecondPage');
+            }else if(name === "btn_familyInfo"){
+              navigate('FamilyInfo');
+            }
             console.log(`selected button: ${name}`);
           }}
         />
