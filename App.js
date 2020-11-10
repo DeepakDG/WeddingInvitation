@@ -9,6 +9,7 @@ import { createStackNavigator} from 'react-navigation-stack';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import FamilyInfo from './FamilyInfo';
+import Language from './Language';
 //import all the screens we are going to switch 
 const App = createStackNavigator({
   //Constant which holds all the screens like index of any book 
@@ -17,6 +18,9 @@ const App = createStackNavigator({
     SecondPage: { screen: SecondPage }, 
 
     FamilyInfo:{screen:FamilyInfo},
+
+    Language:{screen:Language},
+
   },
   // {
      // initialRouteName: 'FirstPage',

@@ -263,6 +263,8 @@ export default class FirstPage extends Component<{}> {
             navigate('SecondPage');
             }else if(name === "btn_familyInfo"){
               navigate('FamilyInfo');
+            }else if(name === "btn_language"){
+              navigate('Language');
             }
             console.log(`selected button: ${name}`);
           }}
