@@ -1,6 +1,6 @@
 export default {
   hompage: {
-    language: 'Language',
+    language: 'English',
     welcome: 'Hello!',
     description: 'Content by English',
   },

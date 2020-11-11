@@ -19,7 +19,7 @@ import Printer from "./Printer";
 import Ticket from "./Ticket";
 
 const listLanguage = [
-  {key:'en', label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'}, {key:'vi', label:'🇻🇳'} ,{label: '🇳🇱', key:'nl'}, {label:'🇨🇳', key:'zh'}, {label:'🇰🇷', key:'ko'}
+  {key:'en', label:'󠁧󠁢󠁥Language'}, {key:'vi', label:'Kannada'} ,{label: 'English', key:'nl'}, {label:'🇨🇳', key:'zh'}, {label:'🇰🇷', key:'ko'}
 ]
 
 const actions = [
@@ -307,7 +307,7 @@ class DropdownLanguage extends React.Component {
   
   render() {
     return (<View style={styles.dropdownLanguage}>
-              <Text style={{width:70,}}>{I18n.t('hompage.language')}: </Text>
+              <Text style={{width:70,color:"white",}}>{I18n.t('hompage.language')}: </Text>
               <Picker
                 mode="dropdown"
                 iosHeader={''} 
@@ -357,7 +357,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   dropdownLanguage :{
-    width:110, height:50, position:'absolute',top:10,right:10, flexDirection:'row',flex:1,justifyContent: "center",alignItems: "center"
+    width:110, height:50, position:'absolute',top:10,right:10, flexDirection:'row',flex:1,justifyContent: "center",alignItems: "center", color : "blue"
   },
   
   paragraph: {

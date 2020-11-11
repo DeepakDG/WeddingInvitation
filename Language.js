@@ -6,7 +6,7 @@ import { Picker,Icon } from "native-base"
 
  
 const listLanguage = [
-  {key:'en', label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'}, {key:'vi', label:'🇻🇳'} ,{label: '🇳🇱', key:'nl'}, {label:'🇨🇳', key:'zh'}, {label:'🇰🇷', key:'ko'}
+  {key:'en', label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'}, {key:'vi', label:'V_languages'} ,{label: 'label_language', key:'nl'}, {label:'cnn_news', key:'zh'}, {label:'movies', key:'ko'}
 ]
 
 export default class Language extends React.Component {
