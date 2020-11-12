@@ -273,7 +273,7 @@ export default class FirstPage extends Component<{}> {
             language={languageSelected}
             onChangeLanguage={this.onChangeLanguage.bind(this)}
           ></DropdownLanguage>
-          <Text>{I18n.t("hompage.welcome")}</Text>
+          <TypingText text={I18n.t("hompage.welcome")} />
           {/* <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text> */}
           {/* <TypingText
             text={
