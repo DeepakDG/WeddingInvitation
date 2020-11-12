@@ -9,7 +9,7 @@ import en from './en';
 import zh from './zh';
 import vn from './vn';
 import vi from './vi';
-import ko from './ko';
+import kn from './kn';
 import nl from './nl';
 
 const locales = RNLocalize.getLocales();
@@ -26,7 +26,7 @@ I18n.translations = {
   'nl-NL': nl,
   zh,
   'vi-VN': vi,
-  ko,
+  kn,
 };
 
 I18n.fallbacks = true;

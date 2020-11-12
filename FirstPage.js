@@ -11,16 +11,17 @@ import {
   Button,
   I18nManager,
 } from "react-native";
-import I18n from './i18n/locales';
-import { Picker,Icon } from "native-base";
+import I18n from "./i18n/locales";
+import { Picker, Icon } from "native-base";
 import PropTypes from "prop-types";
 import { FloatingAction } from "react-native-floating-action";
 import Printer from "./Printer";
 import Ticket from "./Ticket";
 
 const listLanguage = [
-  {key:'en', label:'󠁧󠁢󠁥Language'}, {key:'vi', label:'Kannada'} ,{label: 'English', key:'nl'}, {label:'🇨🇳', key:'zh'}, {label:'🇰🇷', key:'ko'}
-]
+  { key: "kn", label: "Kannada" },
+  { key: "en", label: "󠁧󠁢󠁥English" },
+];
 
 const actions = [
   {
@@ -146,19 +147,19 @@ export default class FirstPage extends Component<{}> {
       startValue: new Animated.Value(0),
       endValue: 1,
       duration: 10000,
-      languageSelected: 'en',
+      languageSelected: "en",
     };
   }
 
-  onChangeLanguage(languageSelected){
+  onChangeLanguage(languageSelected) {
     this.setState({
       languageSelected
     });
-      //this.props.setLanguageUser(value)
-      I18n.locale = languageSelected 
-     // _storeData(USER_LANGUAGE,value);
+    //this.props.setLanguageUser(value)
+    I18n.locale = languageSelected;
+    // _storeData(USER_LANGUAGE,value);
   }
-  
+
   Hide_Splash_Screen = () => {
     this.setState({
       isVisible: false,
@@ -169,7 +170,7 @@ export default class FirstPage extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 10000);
+    }, 1000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -178,13 +179,13 @@ export default class FirstPage extends Component<{}> {
     }).start();
   }
   static navigationOptions = {
-    header: null
+    header: null,
     // title: 'Second Page',
     //Sets Header text of Status Bar
   };
 
   render() {
-    const {languageSelected} = this.state;
+    const { languageSelected } = this.state;
     const ticketHeight = 400;
     const { navigate } = this.props.navigation;
     let Splash_Screen = (
@@ -236,7 +237,7 @@ export default class FirstPage extends Component<{}> {
                 flex: 1,
                 width: "50%",
                 height: "80%",
-                alignItems:"flex-end",
+                alignItems: "flex-end",
               }}
             >
               <Animated.View style={[{ opacity: this.state.startValue }]}>
@@ -268,13 +269,12 @@ export default class FirstPage extends Component<{}> {
           >
             ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
           </Text>
-          <DropdownLanguage language={languageSelected} onChangeLanguage={this.onChangeLanguage.bind(this)}></DropdownLanguage>
-       <Text style={styles.title}>
-         {I18n.t('hompage.welcome')}
-        </Text>
-        <Text style={styles.paragraph}>
-          {I18n.t('hompage.description')}
-        </Text>
+          <DropdownLanguage
+            language={languageSelected}
+            onChangeLanguage={this.onChangeLanguage.bind(this)}
+          ></DropdownLanguage>
+          <Text style={styles.title}>{I18n.t("hompage.welcome")}</Text>
+          <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text>
           {/* <TypingText
             text={
               "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
@@ -285,12 +285,12 @@ export default class FirstPage extends Component<{}> {
         <FloatingAction
           actions={actions}
           onPressItem={(name) => {
-            if(name === "btn_location"){
-            navigate('SecondPage');
-            }else if(name === "btn_familyInfo"){
-              navigate('FamilyInfo');
-            }else if(name === "btn_language"){
-              navigate('Language');
+            if (name === "btn_location") {
+              navigate("SecondPage");
+            } else if (name === "btn_familyInfo") {
+              navigate("FamilyInfo");
+            } else if (name === "btn_language") {
+             
             }
             console.log(`selected button: ${name}`);
           }}
@@ -302,25 +302,34 @@ export default class FirstPage extends Component<{}> {
 
 class DropdownLanguage extends React.Component {
   constructor(props) {
-    super(props)  
+    super(props);
   }
-  
+
   render() {
-    return (<View style={styles.dropdownLanguage}>
-              <Text style={{width:70,color:"white",}}>{I18n.t('hompage.language')}: </Text>
-              <Picker
-                mode="dropdown"
-                iosHeader={''} 
-                style={{ width: undefined,height:40,}}
-                selectedValue={this.props.language}
-                onValueChange={this.props.onChangeLanguage.bind(this)}
-              >
-                {listLanguage.map((languageItem, i) => {
-                    return <Picker.Item key={i} value={languageItem.key} label=         {languageItem.label} />
-                })}
-              </Picker>
-            </View>
-)
+    return (
+      <View style={styles.dropdownLanguage}>
+        {/* <Text style={{ width: 70, color: "white" }}>
+          {I18n.t("hompage.language")}:{" "}
+        </Text> */}
+        <Picker
+          mode="dialog"
+          iosHeader={""}
+          style={{ width: undefined, height: 40 }}
+          selectedValue={this.props.language}
+          onValueChange={this.props.onChangeLanguage.bind(this)}
+        >
+          {listLanguage.map((languageItem, i) => {
+            return (
+              <Picker.Item
+                key={i}
+                value={languageItem.key}
+                label={languageItem.label}
+              />
+            );
+          })}
+        </Picker>
+      </View>
+    );
   }
 }
 const styles = StyleSheet.create({
@@ -353,18 +362,25 @@ const styles = StyleSheet.create({
   title: {
     margin: 24,
     fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
-  dropdownLanguage :{
-    width:110, height:50, position:'absolute',top:10,right:10, flexDirection:'row',flex:1,justifyContent: "center",alignItems: "center", color : "blue"
+  dropdownLanguage: {
+    width: 140,
+    height: 30,
+    position: "absolute",
+    alignSelf: 'flex-end',
+    borderColor: 'red',
+    backgroundColor: 'white',
+    borderWidth: 1,
+    color:"#FFFFFF",
   },
-  
+
   paragraph: {
     margin: 24,
     fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
 
