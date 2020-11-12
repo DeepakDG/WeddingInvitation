@@ -153,7 +153,7 @@ export default class FirstPage extends Component<{}> {
 
   onChangeLanguage(languageSelected) {
     this.setState({
-      languageSelected
+      languageSelected,
     });
     //this.props.setLanguageUser(value)
     I18n.locale = languageSelected;
@@ -273,8 +273,8 @@ export default class FirstPage extends Component<{}> {
             language={languageSelected}
             onChangeLanguage={this.onChangeLanguage.bind(this)}
           ></DropdownLanguage>
-          <Text style={styles.title}>{I18n.t("hompage.welcome")}</Text>
-          <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text>
+          <Text>{I18n.t("hompage.welcome")}</Text>
+          {/* <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text> */}
           {/* <TypingText
             text={
               "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
@@ -290,7 +290,6 @@ export default class FirstPage extends Component<{}> {
             } else if (name === "btn_familyInfo") {
               navigate("FamilyInfo");
             } else if (name === "btn_language") {
-             
             }
             console.log(`selected button: ${name}`);
           }}
@@ -369,11 +368,11 @@ const styles = StyleSheet.create({
     width: 140,
     height: 30,
     position: "absolute",
-    alignSelf: 'flex-end',
-    borderColor: 'red',
-    backgroundColor: 'white',
+    alignSelf: "flex-end",
+    borderColor: "red",
+    backgroundColor: "white",
     borderWidth: 1,
-    color:"#FFFFFF",
+    color: "#FFFFFF",
   },
 
   paragraph: {
@@ -396,7 +395,7 @@ TypingText.propTypes = {
 };
 
 TypingText.defaultProps = {
-  text: "Default Typing Animated Text.",
+  text: I18n.t("hompage.welcome"),
   color: "rgb(255,223,0)",
   marginTop: 100,
   marginHorizontal: 30,
