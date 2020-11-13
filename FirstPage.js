@@ -10,6 +10,8 @@ import {
   Animated,
   Button,
   I18nManager,
+  NativeModules,
+  AsyncStorage,
 } from "react-native";
 import I18n from "./i18n/locales";
 import { Picker, Icon } from "native-base";
@@ -19,8 +21,9 @@ import Printer from "./Printer";
 import Ticket from "./Ticket";
 
 const listLanguage = [
-  { key: "kn", label: "Kannada" },
+  { key: "kn", label: "ಕನ್ನಡ" },
   { key: "en", label: "󠁧󠁢󠁥English" },
+ 
 ];
 
 const actions = [
@@ -147,7 +150,7 @@ export default class FirstPage extends Component<{}> {
       startValue: new Animated.Value(0),
       endValue: 1,
       duration: 10000,
-      languageSelected: "kn",
+      languageSelected: "en",
     };
   }
 
@@ -157,10 +160,7 @@ export default class FirstPage extends Component<{}> {
     });
     //this.props.setLanguageUser(value)
     I18n.locale = languageSelected;
-    TypingText.text = "";
-    TypingText.index = 0;
-    TypingText.typing_timer = -1;
-    TypingText.blinking_cursor_timer = -1;
+    NativeModules.DevSettings.reload();
     // _storeData(USER_LANGUAGE,value);
   }
 
@@ -192,7 +192,6 @@ export default class FirstPage extends Component<{}> {
     const { languageSelected } = this.state;
     const ticketHeight = 400;
     const { navigate } = this.props.navigation;
-    const { elements } = this.state;
     let Splash_Screen = (
       <View style={styles.SplashScreen_RootView}>
         <View style={styles.SplashScreen_ChildView}>
@@ -257,7 +256,6 @@ export default class FirstPage extends Component<{}> {
       </View>
     );
     return (
-  
       <View style={styles.MainContainer}>
         <ImageBackground
           source={require("./images/bg.jpg")}
@@ -279,14 +277,14 @@ export default class FirstPage extends Component<{}> {
             language={languageSelected}
             onChangeLanguage={this.onChangeLanguage.bind(this)}
           ></DropdownLanguage>
-          <TypingText text= {I18n.t("hompage.welcome")}/>
-
+          <TypingText text={I18n.t("hompage.welcome")} />
           {/* <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text> */}
           {/* <TypingText
             text={
               "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
             }
           /> */}
+          {/* {AsyncStorage.setItem('key', languageSelected)} */}
           {this.state.isVisible === true ? Splash_Screen : null}
         </ImageBackground>
         <FloatingAction
@@ -297,7 +295,6 @@ export default class FirstPage extends Component<{}> {
             } else if (name === "btn_familyInfo") {
               navigate("FamilyInfo");
             } else if (name === "btn_language") {
-            
             }
             console.log(`selected button: ${name}`);
           }}
