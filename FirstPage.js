@@ -147,7 +147,7 @@ export default class FirstPage extends Component<{}> {
       startValue: new Animated.Value(0),
       endValue: 1,
       duration: 10000,
-      languageSelected: "en",
+      languageSelected: "kn",
     };
   }
 
@@ -157,6 +157,10 @@ export default class FirstPage extends Component<{}> {
     });
     //this.props.setLanguageUser(value)
     I18n.locale = languageSelected;
+    TypingText.text = "";
+    TypingText.index = 0;
+    TypingText.typing_timer = -1;
+    TypingText.blinking_cursor_timer = -1;
     // _storeData(USER_LANGUAGE,value);
   }
 
@@ -188,6 +192,7 @@ export default class FirstPage extends Component<{}> {
     const { languageSelected } = this.state;
     const ticketHeight = 400;
     const { navigate } = this.props.navigation;
+    const { elements } = this.state;
     let Splash_Screen = (
       <View style={styles.SplashScreen_RootView}>
         <View style={styles.SplashScreen_ChildView}>
@@ -252,6 +257,7 @@ export default class FirstPage extends Component<{}> {
       </View>
     );
     return (
+  
       <View style={styles.MainContainer}>
         <ImageBackground
           source={require("./images/bg.jpg")}
@@ -273,7 +279,8 @@ export default class FirstPage extends Component<{}> {
             language={languageSelected}
             onChangeLanguage={this.onChangeLanguage.bind(this)}
           ></DropdownLanguage>
-          <TypingText text={I18n.t("hompage.welcome")} />
+          <TypingText text= {I18n.t("hompage.welcome")}/>
+
           {/* <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text> */}
           {/* <TypingText
             text={
@@ -290,6 +297,7 @@ export default class FirstPage extends Component<{}> {
             } else if (name === "btn_familyInfo") {
               navigate("FamilyInfo");
             } else if (name === "btn_language") {
+            
             }
             console.log(`selected button: ${name}`);
           }}
