@@ -23,7 +23,6 @@ import Ticket from "./Ticket";
 const listLanguage = [
   { key: "kn", label: "ಕನ್ನಡ" },
   { key: "en", label: "󠁧󠁢󠁥English" },
- 
 ];
 
 const actions = [
@@ -150,17 +149,23 @@ export default class FirstPage extends Component<{}> {
       startValue: new Animated.Value(0),
       endValue: 1,
       duration: 10000,
-      languageSelected: "en",
+      // AsyncStorage.setItem('languageSelected', 'en');
+      // languageSelected :"en",
     };
   }
 
   onChangeLanguage(languageSelected) {
-    this.setState({
-      languageSelected,
+    AsyncStorage.getItem(languageSelected).then((asyncStorageRes) => {
+      const KEY = JSON.parse(languageSelected);
+      this.setState({
+        KEY,
+      });
     });
+
     //this.props.setLanguageUser(value)
     I18n.locale = languageSelected;
     NativeModules.DevSettings.reload();
+
     // _storeData(USER_LANGUAGE,value);
   }
 
@@ -190,6 +195,7 @@ export default class FirstPage extends Component<{}> {
 
   render() {
     const { languageSelected } = this.state;
+    AsyncStorage.setItem("languageSelected", languageSelected);
     const ticketHeight = 400;
     const { navigate } = this.props.navigation;
     let Splash_Screen = (
@@ -277,6 +283,7 @@ export default class FirstPage extends Component<{}> {
             language={languageSelected}
             onChangeLanguage={this.onChangeLanguage.bind(this)}
           ></DropdownLanguage>
+
           <TypingText text={I18n.t("hompage.welcome")} />
           {/* <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text> */}
           {/* <TypingText
