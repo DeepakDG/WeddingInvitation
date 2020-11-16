@@ -154,20 +154,14 @@ export default class FirstPage extends Component<{}> {
     };
   }
 
-  onChangeLanguage(languageSelected) {
-    AsyncStorage.getItem(languageSelected).then((asyncStorageRes) => {
-      const KEY = JSON.parse(languageSelected);
-      this.setState({
-        KEY,
-      });
-    });
-
+  onChangeLanguage(languageSelected){
+    this.setState({
+    languageSelected
+    })
     //this.props.setLanguageUser(value)
-    I18n.locale = languageSelected;
-    NativeModules.DevSettings.reload();
-
+    I18n.locale = languageSelected
     // _storeData(USER_LANGUAGE,value);
-  }
+    }
 
   Hide_Splash_Screen = () => {
     this.setState({
@@ -283,9 +277,7 @@ export default class FirstPage extends Component<{}> {
             language={languageSelected}
             onChangeLanguage={this.onChangeLanguage.bind(this)}
           ></DropdownLanguage>
-
-          <TypingText text={I18n.t("hompage.welcome")} />
-          {/* <Text style={styles.paragraph}>{I18n.t("hompage.description")}</Text> */}
+          <Text style={styles.paragraph}>{I18n.t("hompage.welcome")}</Text>
           {/* <TypingText
             text={
               "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
