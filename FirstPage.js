@@ -277,7 +277,14 @@ export default class FirstPage extends Component<{}> {
             language={languageSelected}
             onChangeLanguage={this.onChangeLanguage.bind(this)}
           ></DropdownLanguage>
-          <Text style={styles.paragraph}>{I18n.t("hompage.welcome")}</Text>
+          <Text  style={{
+              textAlign: "center",
+              marginTop: 40,
+              fontSize: 20,
+              color: "#ffffff",
+              alignContent: "center",
+              fontFamily: "BalooTamma2-Regular",
+            }}>{I18n.t("hompage.welcome")}</Text>
           {/* <TypingText
             text={
               "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
