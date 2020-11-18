@@ -9,21 +9,13 @@ import {
   ImageBackground,
   Animated,
   Button,
-  I18nManager,
-  NativeModules,
-  AsyncStorage,
 } from "react-native";
-import I18n from "./i18n/locales";
 import { Picker, Icon } from "native-base";
 import PropTypes from "prop-types";
 import { FloatingAction } from "react-native-floating-action";
 import Printer from "./Printer";
 import Ticket from "./Ticket";
 
-const listLanguage = [
-  { key: "kn", label: "ಕನ್ನಡ" },
-  { key: "en", label: "󠁧󠁢󠁥English" },
-];
 
 const actions = [
   {
@@ -32,12 +24,12 @@ const actions = [
     name: "btn_familyInfo",
     position: 1,
   },
-  {
-    text: "Language",
-    icon: require("./images/language_icon.png"),
-    name: "btn_language",
-    position: 2,
-  },
+  // {
+  //   text: "Language",
+  //   icon: require("./images/language_icon.png"),
+  //   name: "btn_language",
+  //   position: 2,
+  // },
   {
     text: "Venue",
     icon: require("./images/location_icon.png"),
@@ -154,15 +146,6 @@ export default class FirstPage extends Component<{}> {
     };
   }
 
-  onChangeLanguage(languageSelected){
-    this.setState({
-    languageSelected
-    })
-    //this.props.setLanguageUser(value)
-    I18n.locale = languageSelected
-    // _storeData(USER_LANGUAGE,value);
-    }
-
   Hide_Splash_Screen = () => {
     this.setState({
       isVisible: false,
@@ -173,7 +156,7 @@ export default class FirstPage extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 1000);
+    },800000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -188,8 +171,6 @@ export default class FirstPage extends Component<{}> {
   };
 
   render() {
-    const { languageSelected } = this.state;
-    AsyncStorage.setItem("languageSelected", languageSelected);
     const ticketHeight = 400;
     const { navigate } = this.props.navigation;
     let Splash_Screen = (
@@ -205,8 +186,8 @@ export default class FirstPage extends Component<{}> {
               // ticketNumber={25}
               // ticketDate="Welcome to Wedding Ceremony"
               // ticketTime="01:07"
-              estimatedWaitTime="11th Dec"
-              queuePosition="10th Dec"
+              estimatedWaitTime="11th Dec, 2020"
+              // queuePosition="10th Dec"
               onTicketTaken={() => {
                 this.setState({ ticketIndex: this.state.ticketIndex + 1 });
               }}
@@ -234,8 +215,12 @@ export default class FirstPage extends Component<{}> {
                   style={styles.tinyLogo}
                   source={require("./images/groom.png")}
                 />
+                 <Text style={
+                    (styles.heading, styles.fontFamilyAll)
+                  }>Deepak</Text>
               </Animated.View>
             </View>
+           
             <View
               style={{
                 flex: 1,
@@ -249,6 +234,9 @@ export default class FirstPage extends Component<{}> {
                   style={styles.tinyLogo}
                   source={require("./images/bride.png")}
                 />
+                 <Text  style={
+                    (styles.heading, styles.fontFamilyAll)
+                  }>Sumalatha</Text>
               </Animated.View>
             </View>
           </View>
@@ -273,24 +261,11 @@ export default class FirstPage extends Component<{}> {
           >
             ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
           </Text>
-          <DropdownLanguage
-            language={languageSelected}
-            onChangeLanguage={this.onChangeLanguage.bind(this)}
-          ></DropdownLanguage>
-          <Text  style={{
-              textAlign: "center",
-              marginTop: 40,
-              fontSize: 20,
-              color: "#ffffff",
-              alignContent: "center",
-              fontFamily: "BalooTamma2-Regular",
-            }}>{I18n.t("hompage.welcome")}</Text>
-          {/* <TypingText
+          <TypingText
             text={
               "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
             }
-          /> */}
-          {/* {AsyncStorage.setItem('key', languageSelected)} */}
+          />
           {this.state.isVisible === true ? Splash_Screen : null}
         </ImageBackground>
         <FloatingAction
@@ -310,38 +285,6 @@ export default class FirstPage extends Component<{}> {
   }
 }
 
-class DropdownLanguage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <View style={styles.dropdownLanguage}>
-        {/* <Text style={{ width: 70, color: "white" }}>
-          {I18n.t("hompage.language")}:{" "}
-        </Text> */}
-        <Picker
-          mode="dialog"
-          iosHeader={""}
-          style={{ width: undefined, height: 40 }}
-          selectedValue={this.props.language}
-          onValueChange={this.props.onChangeLanguage.bind(this)}
-        >
-          {listLanguage.map((languageItem, i) => {
-            return (
-              <Picker.Item
-                key={i}
-                value={languageItem.key}
-                label={languageItem.label}
-              />
-            );
-          })}
-        </Picker>
-      </View>
-    );
-  }
-}
 const styles = StyleSheet.create({
   MainContainer: {
     position: "absolute",
@@ -360,6 +303,16 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 
+  heading: {
+    fontWeight: "bold",
+  },
+
+  fontFamilyAll: {
+    fontFamily: "Courgette.Regular",
+    color: "#ff0000",
+    fontSize: 18,
+  },
+
   SplashScreen_ChildView: {
     justifyContent: "center",
     alignItems: "center",
@@ -370,23 +323,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  dropdownLanguage: {
-    width: 140,
-    height: 30,
-    position: "absolute",
-    alignSelf: "flex-end",
-    borderColor: "red",
-    backgroundColor: "white",
-    borderWidth: 1,
-    color: "#FFFFFF",
-  },
-
-  paragraph: {
     margin: 24,
     fontSize: 18,
     fontWeight: "bold",
@@ -406,7 +342,6 @@ TypingText.propTypes = {
 };
 
 TypingText.defaultProps = {
-  text: I18n.t("hompage.welcome"),
   color: "rgb(255,223,0)",
   marginTop: 100,
   marginHorizontal: 30,

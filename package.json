@@ -20,6 +20,7 @@
     "lodash.memoize": "^4.1.2",
     "native-base": "^2.13.14",
     "react": "~16.11.0",
+    "react-animated-text": "^0.1.4",
     "react-dom": "~16.11.0",
     "react-native": "~0.62.2",
     "react-native-circular-action-menu": "^0.5.0",

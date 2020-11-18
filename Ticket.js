@@ -7,6 +7,7 @@ import {
   Text,
   TouchableWithoutFeedback,
   View,
+  Image,
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import Triangle from "react-native-triangle";
@@ -96,6 +97,14 @@ const styles = StyleSheet.create({
     fontSize: 28,
     justifyContent: "center",
   },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  tinyKnot: {
+    width: 250,
+    height: 50,
+  },
 });
 
 class Ticket extends React.Component {
@@ -175,7 +184,7 @@ class Ticket extends React.Component {
     };
 
     return (
-      <View style={{ height: 800 }}>
+      <View style={{ height: 1200 }}>
         <Animated.View style={[styles.container, ticketStyles]}>
           <Animated.View style={[styles.ticketTopContainer]}>
             <View style={[styles.flex, styles.ticketSummary]}>
@@ -186,7 +195,7 @@ class Ticket extends React.Component {
               alignContent: "center",
               paddingBottom:10,
               fontFamily: "BalooTamma2-Regular",
-            }}>{"||ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ||"}</Text>
+            }}>{"||Shri Ganeshaya Namah||"}</Text>
               <Text style={styles.fontFamilyAll}>{"Our Wedding Day"}</Text>
               {/* <Text style={[styles.subHeading, styles.lightGreyText]}>
                 {ticketDate}
@@ -207,7 +216,7 @@ class Ticket extends React.Component {
           <View style={styles.ticketBottomContainer}>
             <View style={styles.queueSummaryContainer}>
               <View>
-                <Text style={[styles.fontFamilyAll]}>Engagement</Text>
+                {/* <Text style={[styles.fontFamilyAll]}>Engagement</Text> */}
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   {/* <View style={{ paddingRight: 8 }}>
                     <Icon name="md-people" color="#000000" size={32} />
@@ -240,57 +249,34 @@ class Ticket extends React.Component {
               style={styles.acceptTicketContainer}
             >
               <View>
-                <Text
-                  style={
-                    (styles.heading, styles.whiteText, styles.fontFamilyAll)
-                  }
-                >
-                  Heartily
-                </Text>
-                <Text
-                  style={
-                    (styles.subHeading, styles.whiteText, styles.fontFamilyAll)
-                  }
-                >
-                  Welcome
-                </Text>
+               
+                <Image
+              style={styles.tinyLogo}
+              source={require("./images/namaste.png")}
+            />
               </View>
-              {/* <View style={{ paddingRight: 24 }}> */}
-              {/* <View
-                  style={{
-                    height: 48,
-                    width: 48,
-                    borderRadius: 48,
-                    borderWidth: 2,
-                    borderColor: "#FFFFFF",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                > */}
-              {/* {ticketTimeRemaining ? (
-                    <Text style={[styles.heading, styles.whiteText]}>
-                      {ticketTimeRemaining}
-                    </Text>
-                  ) : (
-                    <Icon
-                      name=""
-                      color="rgb(255,223,0)"
-                      size={32}
-                    />
-                  )} */}
-              {/* </View> */}
-              {/* </View> */}
+              <View>
+              <Animated.View style={[{ opacity: this.state.startValue }]}>
+                <Image
+                  style={styles.tinyKnot}
+                  source={require("./images/knot.png")}
+                />
+              </Animated.View>
+            </View>
             </View>
           </View>
 
-          <View style={[styles.triangle, this.props.style]}>
+          <View >
+           
           <Triangle
               width={310}
               height={100}
               color={"#bb1471"}
               direction={"down"}
-            />
+              />
+          
           </View>
+          
         </Animated.View>
       </View>
     );
