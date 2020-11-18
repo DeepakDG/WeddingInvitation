@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   fontFamilyAll: {
     fontFamily: "Courgette.Regular",
     color: "rgb(255,223,0)",
-    fontSize: 28,
+    fontSize: 20,
     justifyContent: "center",
   },
   tinyLogo: {
@@ -190,7 +190,7 @@ class Ticket extends React.Component {
             <View style={[styles.flex, styles.ticketSummary]}>
             <Text style={{
               textAlign: "center",
-              fontSize: 20,
+              fontSize: 15,
               color: "#ffffff",
               alignContent: "center",
               paddingBottom:10,

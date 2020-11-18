@@ -156,7 +156,7 @@ export default class FirstPage extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    },800000);
+    },8000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -253,7 +253,7 @@ export default class FirstPage extends Component<{}> {
             style={{
               textAlign: "center",
               marginTop: 40,
-              fontSize: 20,
+              fontSize: 15,
               color: "#ffffff",
               alignContent: "center",
               fontFamily: "BalooTamma2-Regular",
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
   fontFamilyAll: {
     fontFamily: "Courgette.Regular",
     color: "#ff0000",
-    fontSize: 18,
+    fontSize: 15,
   },
 
   SplashScreen_ChildView: {
@@ -324,7 +324,7 @@ const styles = StyleSheet.create({
   },
   title: {
     margin: 24,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: "bold",
     textAlign: "center",
   },
@@ -345,7 +345,7 @@ TypingText.defaultProps = {
   color: "rgb(255,223,0)",
   marginTop: 100,
   marginHorizontal: 30,
-  textSize: 30,
+  textSize: 22,
   fontFamily: "Courgette.Regular",
   typingAnimationDuration: 150,
   blinkingCursorAnimationDuration: 450,
