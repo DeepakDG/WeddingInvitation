@@ -171,7 +171,7 @@ TypingText.defaultProps = {
   color: "rgb(255,223,0)",
   marginTop: 100,
   marginHorizontal: 30,
-  textSize: 30,
+  textSize: 22,
   fontFamily: "Courgette.Regular",
   typingAnimationDuration: 150,
   blinkingCursorAnimationDuration: 450,
