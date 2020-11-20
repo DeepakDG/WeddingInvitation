@@ -9,13 +9,13 @@ import {
   ImageBackground,
   Animated,
   Button,
+  ScrollView,
 } from "react-native";
 import { Picker, Icon } from "native-base";
 import PropTypes from "prop-types";
 import { FloatingAction } from "react-native-floating-action";
 import Printer from "./Printer";
 import Ticket from "./Ticket";
-
 
 const actions = [
   {
@@ -156,7 +156,7 @@ export default class FirstPage extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    },8000);
+    }, 8000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -215,12 +215,12 @@ export default class FirstPage extends Component<{}> {
                   style={styles.tinyLogo}
                   source={require("./images/groom.png")}
                 />
-                 <Text style={
-                    (styles.heading, styles.fontFamilyAll)
-                  }>Deepak</Text>
+                <Text style={(styles.heading, styles.fontFamilyAll)}>
+                  Deepak
+                </Text>
               </Animated.View>
             </View>
-           
+
             <View
               style={{
                 flex: 1,
@@ -234,9 +234,9 @@ export default class FirstPage extends Component<{}> {
                   style={styles.tinyLogo}
                   source={require("./images/bride.png")}
                 />
-                 <Text  style={
-                    (styles.heading, styles.fontFamilyAll)
-                  }>Sumalatha</Text>
+                <Text style={(styles.heading, styles.fontFamilyAll)}>
+                  Sumalatha
+                </Text>
               </Animated.View>
             </View>
           </View>
@@ -261,11 +261,13 @@ export default class FirstPage extends Component<{}> {
           >
             ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
           </Text>
-          <TypingText
-            text={
-              "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
-            }
-          />
+          <ScrollView>
+            <TypingText
+              text={
+                "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
+              }
+            />
+          </ScrollView>
           {this.state.isVisible === true ? Splash_Screen : null}
         </ImageBackground>
         <FloatingAction

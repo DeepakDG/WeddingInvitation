@@ -9,6 +9,7 @@ import {
   ImageBackground,
   Animated,
   Button,
+  ScrollView,
 } from "react-native";
 import PropTypes from "prop-types";
 
@@ -130,11 +131,13 @@ export default class FamilyInfo extends Component<{}> {
           source={require("./images/bg.jpg")}
           style={{ width: "100%", height: "100%" }}
         >
-          <TypingText
-            text={
-              "With Best Compliments from : \n\n Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari Relatives & Friends"
-            }
-          />
+          <ScrollView>
+            <TypingText
+              text={
+                "With Best Compliments from : \n\n Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari Relatives & Friends"
+              }
+            />
+          </ScrollView>
         </ImageBackground>
       </View>
     );

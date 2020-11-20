@@ -9,6 +9,7 @@ import {
   ImageBackground,
   Animated,
   Button,
+  ScrollView,
 } from "react-native";
 import PropTypes from "prop-types";
 
@@ -130,11 +131,13 @@ export default class SecondPage extends Component<{}> {
           source={require("./images/bg.jpg")}
           style={{ width: "100%", height: "100%" }}
         >
-          <TypingText
-            text={
-              "Venue : \n\n Kh Patil Sabha Bhavan\nAPMC Rd, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
-            }
-          />
+          <ScrollView>
+            <TypingText
+              text={
+                "Venue : \n\n Kh Patil Sabha Bhavan\nAPMC Rd, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
+              }
+            />
+          </ScrollView>
         </ImageBackground>
       </View>
     );
