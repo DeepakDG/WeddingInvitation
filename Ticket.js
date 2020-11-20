@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    height: 400,
+    height: 260,
     alignSelf: "stretch",
   },
   ticketTopContainer: {
     flex: 1,
-    paddingTop: 10,
+    paddingTop: 5,
     backgroundColor: "#bb1471",
     alignItems: "center",
     justifyContent: "center",
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   ticketSummary: {
-    paddingTop: 16,
+    paddingTop: 5,
     justifyContent: "center",
   },
   ticketNumber: {
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     borderRadius: 80,
   },
   ticketNotchContainer: {
-    bottom: -60,
+    bottom: -20,
   },
   ticketNotch: {
     backgroundColor: "#bb1471",
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
   tinyKnot: {
     width: 250,
     height: 50,
+    marginTop: 20,
   },
 });
 
@@ -188,14 +189,17 @@ class Ticket extends React.Component {
         <Animated.View style={[styles.container, ticketStyles]}>
           <Animated.View style={[styles.ticketTopContainer]}>
             <View style={[styles.flex, styles.ticketSummary]}>
-            <Text style={{
-              textAlign: "center",
-              fontSize: 15,
-              color: "#ffffff",
-              alignContent: "center",
-              paddingBottom:10,
-              fontFamily: "BalooTamma2-Regular",
-            }}>{"||Shri Ganeshaya Namah||"}</Text>
+              <Text
+                style={{
+                  textAlign: "center",
+                  fontSize: 15,
+                  color: "#ffffff",
+                  alignContent: "center",
+                  fontFamily: "BalooTamma2-Regular",
+                }}
+              >
+                {"||Shri Ganeshaya Namah||"}
+              </Text>
               <Text style={styles.fontFamilyAll}>{"Our Wedding Day"}</Text>
               {/* <Text style={[styles.subHeading, styles.lightGreyText]}>
                 {ticketDate}
@@ -229,7 +233,7 @@ class Ticket extends React.Component {
                 </View>
               </View>
               <View>
-                <Text style={[styles.fontFamilyAll]}>Marriage</Text>
+                <Text style={[styles.fontFamilyAll]}>Marriage Date</Text>
 
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   {/* <View style={{ paddingRight: 8 }}>
@@ -249,34 +253,22 @@ class Ticket extends React.Component {
               style={styles.acceptTicketContainer}
             >
               <View>
-               
                 <Image
-              style={styles.tinyLogo}
-              source={require("./images/namaste.png")}
-            />
-              </View>
-              <View>
-              <Animated.View style={[{ opacity: this.state.startValue }]}>
-                <Image
-                  style={styles.tinyKnot}
-                  source={require("./images/knot.png")}
+                  style={styles.tinyLogo}
+                  source={require("./images/namaste.png")}
                 />
-              </Animated.View>
-            </View>
+              </View>
             </View>
           </View>
 
-          <View >
-           
-          <Triangle
+          <View>
+            <Triangle
               width={310}
               height={100}
               color={"#bb1471"}
               direction={"down"}
-              />
-          
+            />
           </View>
-          
         </Animated.View>
       </View>
     );

@@ -156,7 +156,7 @@ export default class FirstPage extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 800000);
+    }, 8000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -166,10 +166,10 @@ export default class FirstPage extends Component<{}> {
   }
   static navigationOptions = {
     header: null,
-    headerTintColor: '#ffffff',
+    headerTintColor: "#ffffff",
     headerStyle: {
-      backgroundColor: '#2F95D6',
-      borderBottomColor: '#ffffff',
+      backgroundColor: "#2F95D6",
+      borderBottomColor: "#ffffff",
       borderBottomWidth: 3,
     },
     headerTitleStyle: {
@@ -180,7 +180,7 @@ export default class FirstPage extends Component<{}> {
   };
 
   render() {
-    const ticketHeight = 400;
+    const ticketHeight = 260;
     const { navigate } = this.props.navigation;
     let Splash_Screen = (
       <View style={styles.SplashScreen_RootView}>
@@ -202,6 +202,14 @@ export default class FirstPage extends Component<{}> {
               }}
             />
           </Printer>
+          <View>
+            <Animated.View style={[{ opacity: this.state.startValue }]}>
+              <Image
+                style={styles.tinyKnot}
+                source={require("./images/knot.png")}
+              />
+            </Animated.View>
+          </View>
           <View
             style={{
               width: "100%",
@@ -263,13 +271,13 @@ export default class FirstPage extends Component<{}> {
               textAlign: "center",
               marginTop: 10,
               fontSize: 15,
-              color: "#ffffff",
+              color: "#FFDF00",
               alignContent: "center",
               fontFamily: "BalooTamma2-Regular",
-              fontWeight:"bold",
+              fontWeight: "bold",
             }}
           >
-           Shri Veerabhadreshwara Prasann
+            Shri Veerabhadreshwara Prasann
           </Text>
           <ScrollView>
             <TypingText
@@ -339,6 +347,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  tinyKnot: {
+    width: 250,
+    height: 150,
+    marginBottom: 85,
   },
 });
 

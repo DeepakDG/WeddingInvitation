@@ -119,10 +119,10 @@ export default class SecondPage extends Component<{}> {
   static navigationOptions = {
     // header: null
     title: "VENUE",
-    headerTintColor: '#FFDF00',
+    headerTintColor: "#FFDF00",
     headerStyle: {
-      backgroundColor: '#bb1471',
-      borderBottomColor: '#FFDF00',
+      backgroundColor: "#bb1471",
+      borderBottomColor: "#FFDF00",
       borderBottomWidth: 3,
     },
     headerTitleStyle: {
@@ -140,15 +140,20 @@ export default class SecondPage extends Component<{}> {
           source={require("./images/bg.jpg")}
           style={{ width: "100%", height: "100%" }}
         >
-          <Text style={{
+          <Text
+            style={{
               marginTop: 120,
               textAlign: "center",
               fontSize: 18,
               color: "#FFDF00",
               alignContent: "center",
               fontFamily: "BalooTamma2-Regular",
-              fontWeight:"bold",
-            }}> Venue : </Text>
+              fontWeight: "bold",
+            }}
+          >
+            {" "}
+            Venue :{" "}
+          </Text>
           <ScrollView>
             <TypingText
               text={
