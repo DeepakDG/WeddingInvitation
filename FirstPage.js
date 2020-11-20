@@ -24,12 +24,12 @@ const actions = [
     name: "btn_familyInfo",
     position: 1,
   },
-  // {
-  //   text: "Language",
-  //   icon: require("./images/language_icon.png"),
-  //   name: "btn_language",
-  //   position: 2,
-  // },
+  {
+    text: "Muhurtha",
+    icon: require("./images/language_icon.png"),
+    name: "btn_muhurtha",
+    position: 2,
+  },
   {
     text: "Venue",
     icon: require("./images/location_icon.png"),
@@ -166,6 +166,15 @@ export default class FirstPage extends Component<{}> {
   }
   static navigationOptions = {
     header: null,
+    headerTintColor: '#ffffff',
+    headerStyle: {
+      backgroundColor: '#2F95D6',
+      borderBottomColor: '#ffffff',
+      borderBottomWidth: 3,
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+    },
     // title: 'Second Page',
     //Sets Header text of Status Bar
   };
@@ -252,14 +261,15 @@ export default class FirstPage extends Component<{}> {
           <Text
             style={{
               textAlign: "center",
-              marginTop: 20,
+              marginTop: 10,
               fontSize: 15,
               color: "#ffffff",
               alignContent: "center",
               fontFamily: "BalooTamma2-Regular",
+              fontWeight:"bold",
             }}
           >
-            ಶ್ರೀ ವೀರಭದ್ರಸ್ವಾಮಿ ಕೃಪಾ
+           Shri Veerabhadreshwara Prasann
           </Text>
           <ScrollView>
             <TypingText
@@ -277,7 +287,7 @@ export default class FirstPage extends Component<{}> {
               navigate("SecondPage");
             } else if (name === "btn_familyInfo") {
               navigate("FamilyInfo");
-            } else if (name === "btn_language") {
+            } else if (name === "btn_muhurtha") {
             }
             console.log(`selected button: ${name}`);
           }}

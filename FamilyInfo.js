@@ -119,6 +119,15 @@ export default class FamilyInfo extends Component<{}> {
   static navigationOptions = {
     // header: null
     title: "Family-Info",
+    headerTintColor: '#FFDF00',
+    headerStyle: {
+      backgroundColor: '#bb1471',
+      borderBottomColor: '#FFDF00',
+      borderBottomWidth: 3,
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+    },
     //Sets Header text of Status Bar
   };
 
@@ -138,6 +147,7 @@ export default class FamilyInfo extends Component<{}> {
               color: "#ffffff",
               alignContent: "center",
               fontFamily: "BalooTamma2-Regular",
+              fontWeight:"bold",
             }}>With Best Compliments from : </Text>
                 
           <ScrollView>
