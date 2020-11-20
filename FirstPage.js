@@ -252,7 +252,7 @@ export default class FirstPage extends Component<{}> {
           <Text
             style={{
               textAlign: "center",
-              marginTop: 40,
+              marginTop: 20,
               fontSize: 15,
               color: "#ffffff",
               alignContent: "center",

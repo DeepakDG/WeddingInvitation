@@ -131,10 +131,18 @@ export default class SecondPage extends Component<{}> {
           source={require("./images/bg.jpg")}
           style={{ width: "100%", height: "100%" }}
         >
+          <Text style={{
+              marginTop: 120,
+              textAlign: "center",
+              fontSize: 15,
+              color: "#ffffff",
+              alignContent: "center",
+              fontFamily: "BalooTamma2-Regular",
+            }}> Venue : </Text>
           <ScrollView>
             <TypingText
               text={
-                "Venue : \n\n Kh Patil Sabha Bhavan\nAPMC Rd, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
+                " Kh Patil Sabha Bhavan\nAPMC Rd, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
               }
             />
           </ScrollView>
@@ -172,7 +180,7 @@ TypingText.propTypes = {
 TypingText.defaultProps = {
   text: "Default Typing Animated Text.",
   color: "rgb(255,223,0)",
-  marginTop: 100,
+  marginTop: 40,
   marginHorizontal: 30,
   textSize: 22,
   fontFamily: "Courgette.Regular",
