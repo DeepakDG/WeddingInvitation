@@ -156,7 +156,7 @@ export default class FirstPage extends Component<{}> {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 8000);
+    }, 800000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -274,7 +274,7 @@ export default class FirstPage extends Component<{}> {
           <ScrollView>
             <TypingText
               text={
-                "With joyful hearts We request your presence at the Marriage ceremony uniting Sumalatha D/o MRS.Shailaja MR.Chamarasaswamy\n WITH \nDeepak S/o MRS. Gurudevi & MR. Danayya V.Ganachari"
+                "With joyful hearts We request your presence at the Marriage ceremony uniting Chi. Ra Deepak S/o Smt. Gurudevi & Sri. Danayya V.Ganachari\n WITH \nChi. Kum. Sou. Sumalatha D/o Smt. Shailaja & Sri.T.Chamarasa Swamy"
               }
             />
           </ScrollView>

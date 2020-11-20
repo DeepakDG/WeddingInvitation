@@ -143,8 +143,8 @@ export default class FamilyInfo extends Component<{}> {
           <Text  style={{
               marginTop: 120,
               textAlign: "center",
-              fontSize: 15,
-              color: "#ffffff",
+              fontSize: 18,
+              color: "#FFDF00",
               alignContent: "center",
               fontFamily: "BalooTamma2-Regular",
               fontWeight:"bold",
@@ -153,7 +153,7 @@ export default class FamilyInfo extends Component<{}> {
           <ScrollView>
             <TypingText
               text={
-                "Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari Relatives & Friends"
+                "Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari,Smt.Mangala & Sri. Virupakshaiah N.Kotemath,Smt.Jasumati & Sri. Jagadish D Kabbinkantimath Relatives & Friends"
               }
             />
           </ScrollView>

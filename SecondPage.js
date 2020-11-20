@@ -143,8 +143,8 @@ export default class SecondPage extends Component<{}> {
           <Text style={{
               marginTop: 120,
               textAlign: "center",
-              fontSize: 15,
-              color: "#ffffff",
+              fontSize: 18,
+              color: "#FFDF00",
               alignContent: "center",
               fontFamily: "BalooTamma2-Regular",
               fontWeight:"bold",
@@ -152,7 +152,7 @@ export default class SecondPage extends Component<{}> {
           <ScrollView>
             <TypingText
               text={
-                " Kh Patil Sabha Bhavan\nAPMC Rd, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
+                "At K.H Patil Sabha Bhavan\nA.P.M.C Yard, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
               }
             />
           </ScrollView>
