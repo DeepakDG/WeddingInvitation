@@ -138,11 +138,11 @@ export default class SecondPage extends Component<{}> {
       <View style={styles.MainContainer}>
         <ImageBackground
           source={require("./images/bg.jpg")}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%", marginTop:2 }}
         >
           <Text
             style={{
-              marginTop: 120,
+              marginTop: 80,
               textAlign: "center",
               fontSize: 18,
               color: "#FFDF00",
