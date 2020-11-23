@@ -286,9 +286,7 @@ export default class FirstPage extends Component<{}> {
               }
             />
           </ScrollView>
-          {this.state.isVisible === true ? Splash_Screen : null}
-        </ImageBackground>
-        <FloatingAction
+          <FloatingAction
           actions={actions}
           onPressItem={(name) => {
             if (name === "btn_location") {
@@ -300,6 +298,8 @@ export default class FirstPage extends Component<{}> {
             console.log(`selected button: ${name}`);
           }}
         />
+          {this.state.isVisible === true ? Splash_Screen : null}
+        </ImageBackground>
       </View>
     );
   }
