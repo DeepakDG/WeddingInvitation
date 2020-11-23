@@ -21,13 +21,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    height: 260,
+    //container height
+    height: 230,
     alignSelf: "stretch",
   },
   ticketTopContainer: {
     flex: 1,
     paddingTop: 5,
-    backgroundColor: "#bb1471",
+    backgroundColor: "#F08080",
     alignItems: "center",
     justifyContent: "center",
     borderColor: "#EEEEEE",
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   queueSummaryContainer: {
     flex: 1,
     paddingTop: 12,
-    backgroundColor: "#bb1471",
+    backgroundColor: "#F08080",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   acceptTicketContainer: {
     flex: 1,
     paddingTop: 10,
-    backgroundColor: "#bb1471",
+    backgroundColor: "#F08080",
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -89,11 +90,11 @@ const styles = StyleSheet.create({
     bottom: -20,
   },
   ticketNotch: {
-    backgroundColor: "#bb1471",
+    backgroundColor: "#F08080",
   },
   fontFamilyAll: {
     fontFamily: "Courgette.Regular",
-    color: "rgb(255,223,0)",
+    color: "#ffffff",
     fontSize: 20,
     justifyContent: "center",
   },
@@ -106,6 +107,7 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 20,
   },
+  centeredText: { textAlign: "center", margin: 10 },
 });
 
 class Ticket extends React.Component {
@@ -155,6 +157,9 @@ class Ticket extends React.Component {
 
   render() {
     const { ticketTaken, ticketTimeRemaining } = this.state;
+    const CenteredText = (props) => (
+      <Text style={[styles.centeredText, props.style]}>{props.children}</Text>
+    );
     const {
       ticketNumber,
       ticketDate,
@@ -233,7 +238,7 @@ class Ticket extends React.Component {
                 </View>
               </View>
               <View>
-                <Text style={[styles.fontFamilyAll]}>Marriage Date</Text>
+                <Text style={[styles.fontFamilyAll]}>Save the Date</Text>
 
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   {/* <View style={{ paddingRight: 8 }}>
@@ -245,6 +250,7 @@ class Ticket extends React.Component {
                       {/* <Text style={{ fontSize: 18 }}>min</Text> */}
                     </Text>
                   </View>
+                 
                 </View>
               </View>
             </View>
@@ -258,16 +264,19 @@ class Ticket extends React.Component {
                   source={require("./images/namaste.png")}
                 />
               </View>
+            
             </View>
           </View>
 
           <View>
-            <Triangle
-              width={310}
-              height={100}
-              color={"#bb1471"}
-              direction={"down"}
-            />
+          
+              <Triangle
+                width={230}
+                height={40}
+                color={"#F08080"}
+                direction={"down"}
+              />
+           
           </View>
         </Animated.View>
       </View>

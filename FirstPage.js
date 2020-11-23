@@ -232,7 +232,7 @@ export default class FirstPage extends Component<{}> {
                   style={styles.tinyLogo}
                   source={require("./images/groom.png")}
                 />
-                <Text style={(styles.heading, styles.fontFamilyAll)}>
+                <Text style={(styles.fontFamilyDeepak)}>
                   Deepak
                 </Text>
               </Animated.View>
@@ -251,7 +251,7 @@ export default class FirstPage extends Component<{}> {
                   style={styles.tinyLogo}
                   source={require("./images/bride.png")}
                 />
-                <Text style={(styles.heading, styles.fontFamilyAll)}>
+                <Text style={(styles.fontFamilyDeepak)}>
                   Sumalatha
                 </Text>
               </Animated.View>
@@ -323,20 +323,18 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 
-  heading: {
-    fontWeight: "bold",
-  },
-
-  fontFamilyAll: {
+  fontFamilyDeepak: {
     fontFamily: "Courgette.Regular",
-    color: "#ff0000",
+    color: "#ffffff",
     fontSize: 15,
+    fontWeight: "bold",
+    marginLeft:10,
   },
 
   SplashScreen_ChildView: {
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F8C0B5",
+    backgroundColor: "#bb1471",
     flex: 1,
   },
   image: {
