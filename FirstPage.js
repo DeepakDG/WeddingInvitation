@@ -7,28 +7,26 @@ import {
   Image,
   Alert,
   ImageBackground,
-  Animated,
   Button,
   ScrollView,
+  BackHandler,
+  Dimensions,
+  Animated,
+  TouchableOpacity,
 } from "react-native";
+import ConfettiCannon from 'react-native-confetti-cannon';
 import { Picker, Icon } from "native-base";
 import PropTypes from "prop-types";
 import { FloatingAction } from "react-native-floating-action";
 import Printer from "./Printer";
 import Ticket from "./Ticket";
-
+let {width, height} = Dimensions.get('window');
 const actions = [
   {
     text: "Family-info",
     icon: require("./images/info_icon.png"),
     name: "btn_familyInfo",
     position: 1,
-  },
-  {
-    text: "Muhurtha",
-    icon: require("./images/language_icon.png"),
-    name: "btn_muhurtha",
-    position: 2,
   },
   {
     text: "Venue",
@@ -132,15 +130,39 @@ class TypingText extends Component<{}> {
   }
 }
 
+
+class MyComponent extends React.PureComponent {
+  explosion;
+
+  handleSomeKindOfEvent = () => {
+    this.explosion && this.explosion.start();
+  };
+
+  render() {
+    return (
+      <ConfettiCannon
+        count={200}
+        origin={{x: -10, y: 0}}
+        autoStart={false}
+        ref={ref => (this.explosion = ref)}
+      />
+    );
+  }
+}
+
 export default class FirstPage extends Component<{}> {
+  explosion;
   constructor() {
     super();
+    this.springValue = new Animated.Value(100);
     this.state = {
       isVisible: true,
       ticketIndex: 1,
       startValue: new Animated.Value(0),
       endValue: 1,
       duration: 10000,
+      backClickCount: 0,
+      
       // AsyncStorage.setItem('languageSelected', 'en');
       // languageSelected :"en",
     };
@@ -152,8 +174,17 @@ export default class FirstPage extends Component<{}> {
     });
   };
 
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+}
+
+componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+}
+
   componentDidMount() {
     var that = this;
+    this.explosion && this.explosion.start();
     setTimeout(function () {
       that.Hide_Splash_Screen();
     }, 8000);
@@ -164,6 +195,42 @@ export default class FirstPage extends Component<{}> {
       useNativeDriver: true,
     }).start();
   }
+
+  _spring() {
+    this.setState({backClickCount: 1}, () => {
+        Animated.sequence([
+            Animated.spring(
+                this.springValue,
+                {
+                    toValue: -.15 * height,
+                    friction: 5,
+                    duration: 300,
+                    useNativeDriver: true,
+                }
+            ),
+            Animated.timing(
+                this.springValue,
+                {
+                    toValue: 100,
+                    duration: 300,
+                    useNativeDriver: true,
+                }
+            ),
+
+        ]).start(() => {
+            this.setState({backClickCount: 0});
+        });
+    });
+
+}
+
+
+handleBackButton = () => {
+    this.state.backClickCount == 1 ? BackHandler.exitApp() : this._spring();
+
+    return true;
+};
+
   static navigationOptions = {
     header: null,
     headerTintColor: "#ffffff",
@@ -182,6 +249,12 @@ export default class FirstPage extends Component<{}> {
   render() {
     const ticketHeight = 260;
     const { navigate } = this.props.navigation;
+    <ConfettiCannon
+    count={200}
+    origin={{x: -10, y: 0}}
+    autoStart={false}
+    ref={ref => (this.explosion = ref)}
+  />
     let Splash_Screen = (
       <View style={styles.SplashScreen_RootView}>
         <View style={styles.SplashScreen_ChildView}>
@@ -291,6 +364,7 @@ export default class FirstPage extends Component<{}> {
           onPressItem={(name) => {
             if (name === "btn_location") {
               navigate("SecondPage");
+              this.explosion && this.explosion.start();
             } else if (name === "btn_familyInfo") {
               navigate("FamilyInfo");
             } else if (name === "btn_muhurtha") {
@@ -300,6 +374,17 @@ export default class FirstPage extends Component<{}> {
         />
           {this.state.isVisible === true ? Splash_Screen : null}
         </ImageBackground>
+        <Animated.View style={[styles.animatedView, {transform: [{translateY: this.springValue}]}]}>
+                  <Text style={styles.exitTitleText}>press back again to exit the app</Text>
+
+                  <TouchableOpacity
+                      activeOpacity={0.9}
+                      onPress={() => BackHandler.exitApp()}
+                  >
+                      <Text style={styles.exitText}>Exit</Text>
+                  </TouchableOpacity>
+
+              </Animated.View>
       </View>
     );
   }
@@ -351,6 +436,27 @@ const styles = StyleSheet.create({
     height: 150,
     marginBottom: 85,
   },
+  animatedView: {
+    width,
+    backgroundColor: "#0a5386",
+    elevation: 2,
+    position: "absolute",
+    bottom: 0,
+    padding: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+},
+exitTitleText: {
+    textAlign: "center",
+    color: "#ffffff",
+    marginRight: 10,
+},
+exitText: {
+    color: "#e5933a",
+    paddingHorizontal: 10,
+    paddingVertical: 3
+}
 });
 
 TypingText.propTypes = {
