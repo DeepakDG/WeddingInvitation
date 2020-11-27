@@ -355,7 +355,7 @@ handleBackButton = () => {
           <ScrollView>
             <TypingText
               text={
-                "With joyful hearts We request your presence at the Marriage ceremony uniting Chi. Ra Deepak S/o Smt. Gurudevi & Sri. Danayya V.Ganachari\n WITH \nChi. Kum. Sou. Sumalatha D/o Smt. Shailaja & Sri.T.Chamarasa Swamy"
+                "With joyful hearts We request your presence at the Marriage ceremony uniting Chi. Ra Deepak S/o Smt. Gurudevi & Sri. Danayya V.Ganachari\n WITH \nChi. Kum. Sou. Sumalatha D/o Smt. Shailaja & Sri.T.Chamarasa Swamy Shankhinmath\n on Friday 11-12-2020 @ 12.16 p.m. in Abhijit Lagna"
               }
             />
           </ScrollView>
@@ -472,7 +472,7 @@ TypingText.propTypes = {
 
 TypingText.defaultProps = {
   color: "rgb(255,223,0)",
-  marginTop: 100,
+  marginTop: 70,
   marginHorizontal: 30,
   textSize: 22,
   fontFamily: "Courgette.Regular",

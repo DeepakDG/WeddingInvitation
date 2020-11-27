@@ -153,7 +153,7 @@ export default class FamilyInfo extends Component<{}> {
           <ScrollView>
             <TypingText
               text={
-                "Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari,Smt.Mangala & Sri. Virupakshaiah N.Kotemath,Smt.Jasumati & Sri. Jagadish D Kabbinkantimath Relatives & Friends"
+                "Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari,Smt.Mangala & Sri. Virupakshaiah N.Kotemath,Smt. Shailaja & Sri.T.Chamarasa Swamy Shankhinmath,Smt.Jasumati & Sri. Jagadish D Kabbinkantimath Relatives & Friends"
               }
             />
           </ScrollView>
