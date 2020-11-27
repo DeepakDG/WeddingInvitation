@@ -130,28 +130,7 @@ class TypingText extends Component<{}> {
   }
 }
 
-
-class MyComponent extends React.PureComponent {
-  explosion;
-
-  handleSomeKindOfEvent = () => {
-    this.explosion && this.explosion.start();
-  };
-
-  render() {
-    return (
-      <ConfettiCannon
-        count={200}
-        origin={{x: -10, y: 0}}
-        autoStart={false}
-        ref={ref => (this.explosion = ref)}
-      />
-    );
-  }
-}
-
 export default class FirstPage extends Component<{}> {
-  explosion;
   constructor() {
     super();
     this.springValue = new Animated.Value(100);
@@ -184,10 +163,9 @@ componentWillUnmount() {
 
   componentDidMount() {
     var that = this;
-    this.explosion && this.explosion.start();
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 8000);
+    }, 800000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -249,12 +227,7 @@ handleBackButton = () => {
   render() {
     const ticketHeight = 260;
     const { navigate } = this.props.navigation;
-    <ConfettiCannon
-    count={200}
-    origin={{x: -10, y: 0}}
-    autoStart={false}
-    ref={ref => (this.explosion = ref)}
-  />
+   
     let Splash_Screen = (
       <View style={styles.SplashScreen_RootView}>
         <View style={styles.SplashScreen_ChildView}>
@@ -289,7 +262,7 @@ handleBackButton = () => {
               flex: 1,
               flexDirection: "row",
               position: "absolute",
-              bottom: 0,
+              bottom: 10,
             }}
           >
             <View
@@ -331,6 +304,7 @@ handleBackButton = () => {
             </View>
           </View>
         </View>
+        <ConfettiCannon count={200} origin={{x: -10, y: 0}} />
       </View>
     );
     return (
