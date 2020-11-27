@@ -165,7 +165,7 @@ componentWillUnmount() {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 800000);
+    }, 12000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
