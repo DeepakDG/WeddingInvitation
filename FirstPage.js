@@ -23,7 +23,7 @@ import Ticket from "./Ticket";
 let {width, height} = Dimensions.get('window');
 const actions = [
   {
-    text: "Family-info",
+    text: "Best Compliments",
     icon: require("./images/info_icon.png"),
     name: "btn_familyInfo",
     position: 1,
