@@ -157,7 +157,7 @@ export default class SecondPage extends Component<{}> {
           <ScrollView>
             <TypingText
               text={
-                "On Friday 11-12-2020 @ 12.16 p.m. in Abhijit Lagna \nAt K.H Patil Sabha Bhavan\nA.P.M.C Yard, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
+                "On Friday 11-12-2020 @ 12.16 p.m. Onwards,\nAt K.H Patil Sabha Bhavan\nA.P.M.C Yard,\nGadag, Karnataka"
               }
             />
           </ScrollView>
