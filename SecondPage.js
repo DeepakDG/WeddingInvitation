@@ -118,7 +118,7 @@ export default class SecondPage extends Component<{}> {
   }
   static navigationOptions = {
     // header: null
-    title: "VENUE",
+    title: "TIMINGS & VENUE",
     headerTintColor: "#FFDF00",
     headerStyle: {
       backgroundColor: "#bb1471",
@@ -152,12 +152,12 @@ export default class SecondPage extends Component<{}> {
             }}
           >
             {" "}
-            Venue :{" "}
+            Timings & Venue :{" "}
           </Text>
           <ScrollView>
             <TypingText
               text={
-                "At K.H Patil Sabha Bhavan\nA.P.M.C Yard, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
+                "On Friday 11-12-2020 @ 12.16 p.m. in Abhijit Lagna \nAt K.H Patil Sabha Bhavan\nA.P.M.C Yard, Panchal Nagar,\nKalasapur,\nGadag, Karnataka"
               }
             />
           </ScrollView>
@@ -199,6 +199,6 @@ TypingText.defaultProps = {
   marginHorizontal: 30,
   textSize: 22,
   fontFamily: "Courgette.Regular",
-  typingAnimationDuration: 150,
+  typingAnimationDuration: 50,
   blinkingCursorAnimationDuration: 450,
 };

@@ -29,7 +29,7 @@ const actions = [
     position: 1,
   },
   {
-    text: "Venue",
+    text: "Timings & Venue",
     icon: require("./images/location_icon.png"),
     name: "btn_location",
     position: 3,
@@ -165,7 +165,7 @@ componentWillUnmount() {
     var that = this;
     setTimeout(function () {
       that.Hide_Splash_Screen();
-    }, 18000);
+    }, 10000);
 
     Animated.timing(this.state.startValue, {
       toValue: this.state.endValue,
@@ -180,7 +180,7 @@ componentWillUnmount() {
             Animated.spring(
                 this.springValue,
                 {
-                    toValue: -.15 * height,
+                    toValue: -.0 * height,
                     friction: 5,
                     duration: 300,
                     useNativeDriver: true,
@@ -225,7 +225,7 @@ handleBackButton = () => {
   };
 
   render() {
-    const ticketHeight = 260;
+    const ticketHeight = 280;
     const { navigate } = this.props.navigation;
    
     let Splash_Screen = (
@@ -235,6 +235,9 @@ handleBackButton = () => {
             source={require("./images/veerabhadra10.jpg")}
             style={{ width: "100%", height: "100%", resizeMode: "contain" }}
           /> */}
+          <Text style={(styles.topHeadingInvite)}>
+                  Ganachari Family Invites You
+          </Text>
           <Printer key={this.state.ticketIndex} ticketHeight={ticketHeight}>
             <Ticket
               height={ticketHeight}
@@ -316,7 +319,7 @@ handleBackButton = () => {
           <Text
             style={{
               textAlign: "center",
-              marginTop: 10,
+              marginTop: 20,
               fontSize: 15,
               color: "#FFDF00",
               alignContent: "center",
@@ -324,12 +327,12 @@ handleBackButton = () => {
               fontWeight: "bold",
             }}
           >
-            Shri Veerabhadreshwara Prasann
+            Shri Veerabhadreshwara Prasanna
           </Text>
           <ScrollView>
             <TypingText
               text={
-                "With joyful hearts We request your presence at the Marriage ceremony uniting Chi. Ra Deepak S/o Smt. Gurudevi & Sri. Danayya V.Ganachari\n WITH \nChi. Kum. Sou. Sumalatha D/o Smt. Shailaja & Sri.T.Chamarasa Swamy Shankhinmath\n on Friday 11-12-2020 @ 12.16 p.m. in Abhijit Lagna"
+                "With joyful hearts We request your presence at the Marriage ceremony uniting \nChi. Ra Deepak Ganachari\n WITH \nChi. Kum. Sou. Sumalatha Shankhinmath"
               }
             />
           </ScrollView>
@@ -430,7 +433,14 @@ exitText: {
     color: "#e5933a",
     paddingHorizontal: 10,
     paddingVertical: 3
-}
+},
+topHeadingInvite:{
+  backgroundColor: 'rgb(255,223,0)',
+  color:"#bb1471",
+  fontSize: 18,
+  fontWeight: "bold",
+  textAlign: "center",
+},
 });
 
 TypingText.propTypes = {
@@ -446,10 +456,10 @@ TypingText.propTypes = {
 
 TypingText.defaultProps = {
   color: "rgb(255,223,0)",
-  marginTop: 70,
+  marginTop: 100,
   marginHorizontal: 30,
   textSize: 22,
   fontFamily: "Courgette.Regular",
-  typingAnimationDuration: 150,
-  blinkingCursorAnimationDuration: 450,
+  typingAnimationDuration: 50,
+  blinkingCursorAnimationDuration: 650,
 };

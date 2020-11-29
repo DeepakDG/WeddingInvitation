@@ -271,7 +271,7 @@ class Ticket extends React.Component {
           <View>
           
               <Triangle
-                width={230}
+                width={300}
                 height={40}
                 color={"#F08080"}
                 direction={"down"}

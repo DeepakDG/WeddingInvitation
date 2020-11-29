@@ -195,6 +195,6 @@ TypingText.defaultProps = {
   marginHorizontal: 30,
   textSize: 22,
   fontFamily: "Courgette.Regular",
-  typingAnimationDuration: 150,
+  typingAnimationDuration: 50,
   blinkingCursorAnimationDuration: 450,
 };
