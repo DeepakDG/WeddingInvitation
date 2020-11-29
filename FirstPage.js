@@ -332,7 +332,7 @@ handleBackButton = () => {
           <ScrollView>
             <TypingText
               text={
-                "With joyful hearts We request your presence at the Marriage ceremony uniting \nChi. Ra Deepak Ganachari\n WITH \nChi. Kum. Sou. Sumalatha Shankhinmath"
+                "With joyful hearts We request your presence at the Marriage ceremony uniting \nChi. Ra Deepak Ganachari\n WITH \nChi. Kum. Sou. Sumalatha Shankhinamath"
               }
             />
           </ScrollView>
