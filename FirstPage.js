@@ -163,6 +163,7 @@ componentWillUnmount() {
 
   componentDidMount() {
     var that = this;
+    
     setTimeout(function () {
       that.Hide_Splash_Screen();
     }, 10000);
