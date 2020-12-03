@@ -141,7 +141,7 @@ export default class FamilyInfo extends Component<{}> {
           style={{ width: "100%", height: "100%",marginTop:2 }}
         >
           <Text  style={{
-              marginTop: 80,
+              marginTop: 60,
               textAlign: "center",
               fontSize: 18,
               color: "#FFDF00",
@@ -153,7 +153,7 @@ export default class FamilyInfo extends Component<{}> {
           <ScrollView>
             <TypingText
               text={
-                "Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari,Smt.Mangala & Sri. Virupakshaiah N.Kotemath,Smt. Shailaja & Sri.T.Chamarasa Swamy Shankhinamath,Smt.Jasumati & Sri. Jagadish D Kabbinkantimath Relatives & Friends"
+                "Smt. Gurudevi & Sri. Danayya V.Ganachari,Sri. Sunil Danayya Ganachari,Smt.Mangala & Sri. Virupakshaiah N.Kotemath,Smt. Shailaja & Sri.T.Chamarasa Swamy Shankhinamath,Smt.Jasumati & Sri. Jagadish D Kabbinkantimath Relatives & Friends\n\n DEEPAK TRADERS\nCotton Merchants\nPlot. No. 95 APMC Yard\nGADAG 582 101 Karnataka State\nMob. 9449188385, 9538735612"
               }
             />
           </ScrollView>
@@ -191,10 +191,10 @@ TypingText.propTypes = {
 TypingText.defaultProps = {
   text: "Default Typing Animated Text.",
   color: "rgb(255,223,0)",
-  marginTop: 40,
+  marginTop: 30,
   marginHorizontal: 30,
-  textSize: 22,
+  textSize: 18,
   fontFamily: "Courgette.Regular",
-  typingAnimationDuration: 50,
+  typingAnimationDuration: 5,
   blinkingCursorAnimationDuration: 450,
 };

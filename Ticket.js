@@ -203,7 +203,7 @@ class Ticket extends React.Component {
                   fontFamily: "BalooTamma2-Regular",
                 }}
               >
-                {"||Shri Ganeshaya Namah||"}
+                {"|| ॐ Shri Ganeshaya Namah ||"}
               </Text>
               <Text style={styles.fontFamilyAll}>{"Our Wedding Day"}</Text>
               {/* <Text style={[styles.subHeading, styles.lightGreyText]}>

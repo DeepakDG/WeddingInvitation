@@ -12,6 +12,7 @@ import FamilyInfo from './FamilyInfo';
 //import all the screens we are going to switch 
 const App = createStackNavigator({
   //Constant which holds all the screens like index of any book 
+  
     FirstPage: { screen: FirstPage }, 
     //First entry by default be our first screen if we do not define initialRouteName
     SecondPage: { screen: SecondPage }, 
@@ -19,6 +20,7 @@ const App = createStackNavigator({
     FamilyInfo:{screen:FamilyInfo},
 
   },
+  console.warn = () => {}
   // {
      // initialRouteName: 'FirstPage',
   // }

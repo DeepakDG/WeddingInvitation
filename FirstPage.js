@@ -320,7 +320,7 @@ handleBackButton = () => {
           <Text
             style={{
               textAlign: "center",
-              marginTop: 20,
+              marginTop: 5,
               fontSize: 15,
               color: "#FFDF00",
               alignContent: "center",
@@ -328,7 +328,7 @@ handleBackButton = () => {
               fontWeight: "bold",
             }}
           >
-            Shri Veerabhadreshwara Prasanna
+            || ॐ Shri Veerabhadreshwara Prasanna ||
           </Text>
           <ScrollView>
             <TypingText
@@ -436,11 +436,12 @@ exitText: {
     paddingVertical: 3
 },
 topHeadingInvite:{
-  backgroundColor: 'rgb(255,223,0)',
-  color:"#bb1471",
   fontSize: 18,
-  fontWeight: "bold",
+  fontWeight: "800",
+  fontStyle: 'italic',
   textAlign: "center",
+  fontFamily: "Courgette.Regular",
+  color:"#ffffff",
 },
 });
 
