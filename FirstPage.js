@@ -237,7 +237,7 @@ handleBackButton = () => {
             style={{ width: "100%", height: "100%", resizeMode: "contain" }}
           /> */}
           <Text style={(styles.topHeadingInvite)}>
-                  Ganachari Family Invites You
+                  Ganachari Family Welcomes You
           </Text>
           <Printer key={this.state.ticketIndex} ticketHeight={ticketHeight}>
             <Ticket
@@ -272,8 +272,8 @@ handleBackButton = () => {
             <View
               style={{
                 flex: 1,
-                width: "50%",
-                height: "80%",
+                width: "20%",
+                height: "40%",
                 alignItems: "flex-start",
               }}
             >
@@ -291,8 +291,8 @@ handleBackButton = () => {
             <View
               style={{
                 flex: 1,
-                width: "50%",
-                height: "80%",
+                width: "20%",
+                height: "40%",
                 alignItems: "flex-end",
               }}
             >
@@ -301,7 +301,7 @@ handleBackButton = () => {
                   style={styles.tinyLogo}
                   source={require("./images/bride.png")}
                 />
-                <Text style={(styles.fontFamilyDeepak)}>
+                <Text style={(styles.fontFamilySumalatha)}>
                   Sumalatha
                 </Text>
               </Animated.View>
@@ -391,7 +391,15 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 15,
     fontWeight: "bold",
-    marginLeft:10,
+    marginLeft:25,
+  },
+
+  fontFamilySumalatha: {
+    fontFamily: "Courgette.Regular",
+    color: "#ffffff",
+    fontSize: 15,
+    fontWeight: "bold",
+    marginLeft:15,
   },
 
   SplashScreen_ChildView: {
@@ -437,7 +445,7 @@ exitText: {
 },
 topHeadingInvite:{
   fontSize: 18,
-  fontWeight: "800",
+  fontWeight: "bold",
   fontStyle: 'italic',
   textAlign: "center",
   fontFamily: "Courgette.Regular",
